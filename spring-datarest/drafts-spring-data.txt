@@ -1,0 +1,18 @@
+ JAVA - praticando SpringDataRest com Gradle 
+ em web, DevTools, JPA, Rest Repositories, Rest Repositories Hall Browser
+
+
+
+                  //////////////// Spring Data ///////////////
+principal objetivo prover uma forma facil  e familiara
+de trabalhar com Models dentro de sua aplicação
+abstraindo toda a infraestrutura processo de conexão , admin de dados para 
+qualquer tipo de acesso.
+
+
+                 //////////////// Spring Data Rest ///////////////
+ligado ao Spring Data utilizando HATEOAS(Hypermedia as the Engine of Application State) 
+
+                /////////////////// HATEOAS ////////////////////
+ é uma chave de arquitetura REST, que prove informaçoes que permite navegar de forma dinamica
+ entre os seus end points, acessar objetos especificos

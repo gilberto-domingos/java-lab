@@ -1,6 +1,4 @@
 package com.jrd;
-
-
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -8,6 +6,7 @@ public class App {
 
 	public static void main(String[] args) {
 		
+		//--------------switch arrow------------------//		
 		Integer status = 1;
 		
 		switch(status) {
@@ -16,15 +15,11 @@ public class App {
 			default -> {
 				System.out.println("number 0");
 			}
-				
-				
-		
-		
 		}
 	
 		
-		
 		//--------------multilines------------------//
+		
 		/*	String multiline = """
 				hello 
 				world,
@@ -33,17 +28,21 @@ public class App {
 	                    	System.out.println(multiline); */
 		
 	//------------------------set list--------------------------------//
+		
 		/*	Set<String>listSet = Set.of("a1", "a2", "a3", "a4");
 		    System.out.println(listSet)  */
 	
-	//------------------stream iterate -------------------------//
-	/*	Stream.iterate(2, number -> number * 2)
+	
+		//------------------stream iterate -------------------------//
+	
+		/*	Stream.iterate(2, number -> number * 2)
 		.limit(30)
 		.forEach(n -> System.out.println(n)); */
 		
 		
 		//------------ stream ------------------//	
-				/*	String str = "Hello \n" + "world";
+				
+		/*	String str = "Hello \n" + "world";
 				Stream<String>lines = str.lines();
 				lines.forEach(System.out::println);  */
 		

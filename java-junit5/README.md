@@ -1,7 +1,9 @@
-# JUnit-Eclipse
+# JAVA - JUnit5 - Testing
 
-Testando o JUnit na nova IDE do Eclipse, Testes Unitários e Suite de Testes
+Testando o JUnit 5 Testes Unitários e Suite de Testes
 
-Testing JUnit in the new Eclipse IDE, Unitary Tests and Test Suite
+------------------------------------------------------------------------
+
+Testing JUnit 5  Unitary Tests and Test Suite
 
 

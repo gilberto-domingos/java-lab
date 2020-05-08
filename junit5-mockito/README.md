@@ -1,4 +1,4 @@
-# Java - JUnit5 e Mockito no SpringBoot
+#  JUnit5 e Mockito no SpringBoot
 
 Fazendo testes unitários dentro de uma arquitetura básica do SpringBoot exercitando JUnit5 e Mockito
 
@@ -21,7 +21,7 @@ Fazendo testes unitários dentro de uma arquitetura básica do SpringBoot exerci
 
 
 
-# Java - JUnit5 and Mockito on SpringBoot
+#  JUnit5 and Mockito on SpringBoot
 
 Doing unit tests within a basic SpringBoot architecture by exercising JUnit5 and Mockito
 

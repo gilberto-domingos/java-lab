@@ -1,7 +1,35 @@
-# Java - SpringBoot - Praticando testes unitários com SpringBoot
+# Java - JUnit5 e Mockito no SpringBoot
 
-Fazendo uma checagem no JUnit 5 e aproveitando para dar uma praticada com SpringBoot
+Fazendo testes unitários dentro de uma arquitetura básica do SpringBoot exercitando JUnit5 e Mockito
 
------------------------------------------------------------------------------------------
+# Implementações
 
-Doing a check on JUnit 5 and taking the opportunity to practice with SpringBoot
+- Configurando Serviço
+- Criando serviço de novo registro
+- Testando serviço de novo registro
+- Criando serviço de listagem
+- Testando serviço de listagem
+- Criando serviço de remoção
+- Testando serviço de remoção
+- Testando Cenários negativos
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+# Java - JUnit5 and Mockito on SpringBoot
+
+Doing unit tests within a basic SpringBoot architecture by exercising JUnit5 and Mockito
+
+# Implementations
+
+- Configuring Service
+- Creating new registration service
+- Testing new registration service
+- Creating listing service
+- Testing listing service
+- Creating removal service
+- Testing removal service
+- Testing negative scenarios
+
+
+
+

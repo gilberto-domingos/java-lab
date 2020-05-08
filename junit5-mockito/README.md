@@ -1,6 +1,6 @@
 # Java - JUnit5 e Mockito no SpringBoot com Banco de Dados
 
-Fazendo testes unitários dentro de uma arquitetura básica API SpringBoot exercitando JUni
+Fazendo testes unitários dentro de
 
 # Implementações
 

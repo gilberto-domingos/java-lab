@@ -1,6 +1,6 @@
 # JUnit5 e Mockito no SpringBoot
 
-Fazendo testes unitários dentro de uma arquitetura básica API SpringBoot exercitando JUnit5 e Mockito com Banco de Dados
+Fazendo testes unitários dentro de uma arquitetura básica API SpringBoot maven exercitando JUnit5 e Mockito com Banco de Dados
 
 # Implementações
 
@@ -19,7 +19,7 @@ Fazendo testes unitários dentro de uma arquitetura básica API SpringBoot exerc
 
 # JUnit5 and Mockito on SpringBoot 
 
-Doing unit tests within a basic SpringBoot API architecture by exercising JUnit5 and Mockito with database
+Doing unit tests within a basic SpringBoot API maven architecture by exercising JUnit5 and Mockito with database
 
 # Implementations
 

@@ -11,7 +11,7 @@ Junit framework testes unitários e também utilização de metodologias como o 
 - Execução de testes em ordem
 - Execução de testes parametrizados
 
------------------------------------------------------------------------------------------------------------------------------
+******************************************************************************************************************************
 
 
 # jUnit Java in Maven

@@ -3,6 +3,8 @@ package com.jrd.junit_maven;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+import static com.jrd.junit_maven.isEmptyString.*;
+import static com.jrd.junit_maven.DivisibleBy.*;
 
 public class AssertTest {
      
@@ -20,7 +22,7 @@ public class AssertTest {
 		   String str4 = "Junit";
 		   
 		   assertThat(str3, is("Junit"));  
-		   assertThat(str4, isA(String.class));   
+		   assertThat(str4, isA(String.class));   		   
 	   }
 	   
 	   @Test
@@ -38,6 +40,22 @@ public class AssertTest {
 		   
 		   assertArrayEquals(array1, array2);
 	   }
+	   
+	   @Test
+	   public void testAssertEmpty() {
+		   String tst = ""; 
+		   
+		   assertThat(tst, is(isEmpty(tst)));
+		  
+	   }
+	   
+	  @Test
+	  public void divisibleBy() {
+		  Integer tst2 = 5;
+		  
+		 assertThat(tst2, is(divisible(2)));
+	  }
+	   
 	   
 	   
 }

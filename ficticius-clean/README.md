@@ -17,4 +17,4 @@ empresa, cálculo de previsão de gastos, quantidade e valor.
 
 
 Pré requisitos
-Para iniciar o desenvolvimento da plataforma é necessário ter a JDK 11.
+Para iniciar o desenvolvimento da plataforma é necessário ter a JDK 11 e o Banco de Dados MySql

@@ -3,7 +3,7 @@
 API RestFull usando Java com Spring Boot e banco de dados MySQL
 
 CRUD (Create, Read, Update, Delete), armazenando os veículos utilizados pela 
-empresa, cálculo de previsão de gastos, quantidade e valor.
+empresa, cálculo de previsão de gastos, quantidade e valor, apresentando um ranqueamento dos veículos por ordem de gastos.
 
 
 

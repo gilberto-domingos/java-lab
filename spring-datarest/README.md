@@ -1,4 +1,4 @@
-# JAVA - Spring Dat aRest
+# JAVA - Spring DataRest
 
 Java SpringDataRest e experimentando lombok no gradle 
 

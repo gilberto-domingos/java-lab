@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 
 import com.jrd.springproducer.ampq.AmpqProducer;
 import com.jrd.springproducer.dto.MessageQueue;
-import com.jrd.springproducer.service.AmqpService;
+import com.jrd.springproducer.service.AmpqService;
 
 @Service
-public class RabbitMQServiceImpl implements AmqpService  {
+public class RabbitMQServiceImpl implements AmpqService  {
 	
 	@Autowired
 	private AmpqProducer<MessageQueue> ampq;

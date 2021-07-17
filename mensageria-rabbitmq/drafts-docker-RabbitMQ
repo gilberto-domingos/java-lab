@@ -1,4 +1,7 @@
-docker - RabbitMQ(Mensageria)
+docker-RabbitMQ
+
+Mensageria com RabbitMQ + SpringBoot 11 + Docker
+
 
 docker run -d -p 15672:15672 -p 5672:5672 --name rabbitmq rabbitma:3-management
 

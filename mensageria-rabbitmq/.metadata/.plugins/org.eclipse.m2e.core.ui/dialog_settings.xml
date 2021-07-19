@@ -2,8 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
-			<item value="/home/jrd/eclipse-workspace/spring-producer"/>
 			<item value="/home/jrd/Documents/docker-RabbitMQ/spring-producer"/>
+			<item value="/home/jrd/eclipse-workspace/spring-producer"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

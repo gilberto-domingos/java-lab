@@ -1,8 +1,0 @@
-package com.jrd.springproducer.service;
-
-import com.jrd.springproducer.dto.MessageQueue;
-
-public interface AmpqService {
-	void sendToConsumer(MessageQueue message);
-
-}

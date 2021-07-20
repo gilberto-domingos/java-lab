@@ -16,7 +16,6 @@
 <fullyQualifiedTypeName name="org.springframework.amqp.support.converter.Jackson2JsonMessageConverter"/>
 <fullyQualifiedTypeName name="org.springframework.amqp.rabbit.connection.Connection"/>
 <fullyQualifiedTypeName name="org.springframework.amqp.rabbit.connection.ConnectionFactory"/>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
 <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.amqp.SimpleRabbitListenerContainerFactoryConfigurer"/>
 <fullyQualifiedTypeName name="org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory"/>
 <fullyQualifiedTypeName name="com.jrd.consumer.amqp.AmqpConsumer"/>
@@ -28,4 +27,6 @@
 <fullyQualifiedTypeName name="com.jrd.consumer.service.ConsumerService"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>

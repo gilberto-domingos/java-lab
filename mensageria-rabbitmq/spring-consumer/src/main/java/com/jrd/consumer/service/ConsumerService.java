@@ -4,5 +4,5 @@ import com.jrd.consumer.dto.MessageQueue;
 
 public interface ConsumerService {
 	
-   public void action(MessageQueue messageQueue);
+   public void action(MessageQueue messageQueue) throws Exception;
 }

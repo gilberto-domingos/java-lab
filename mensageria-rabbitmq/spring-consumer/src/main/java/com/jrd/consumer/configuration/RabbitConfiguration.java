@@ -17,7 +17,7 @@ public class RabbitConfiguration {
 	}
 	  
 	@Bean
-	public SimpleRabbitListenerContainerFactory simpleRabbitListenerContainerFactory(ConnectionFactory connectionFactory,
+	public SimpleRabbitListenerContainerFactory factory(ConnectionFactory connectionFactory,
 												SimpleRabbitListenerContainerFactoryConfigurer configurer) {
 		SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
 		configurer.configure(factory, connectionFactory);

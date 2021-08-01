@@ -24,7 +24,7 @@ Sistema com Microserviços - Trabalhadores, Renda diária, Dias trabalhados e Fo
 
 9 - Zuul Timeout - Mesmo se o Hystrix e o Ribbon configurado em um microservice , se o zuul não tiver seu timeout configurado, para ele será um problema de timeout, e se o timeout estiver configurando somente no Zuul o Hystrix vai chamar o método alternativo fallbackMethod no microserviço específico.
           
-10 - Usuario - user microservice         
+10 - Usuario - user microservice -  User, Role, associação muitos para muitos        
 
 11 -Atenticação e Autorização  - OAth2    
           

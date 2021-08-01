@@ -2,7 +2,7 @@ package com.jrd.rhworker.service;
 
 import java.util.List;
 
-import com.jrd.rhworker.model.Worker;
+import com.jrd.rhworker.entity.Worker;
 
 public interface WorkerService {
 	

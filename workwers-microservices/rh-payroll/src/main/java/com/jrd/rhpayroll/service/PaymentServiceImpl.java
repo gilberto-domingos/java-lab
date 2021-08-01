@@ -3,9 +3,9 @@ package com.jrd.rhpayroll.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.jrd.rhpayroll.entity.Payment;
+import com.jrd.rhpayroll.entity.Worker;
 import com.jrd.rhpayroll.feignClient.WorkerFignClient;
-import com.jrd.rhpayroll.model.Payment;
-import com.jrd.rhpayroll.model.Worker;
 
 @Service
 public class PaymentServiceImpl implements PaymentService {

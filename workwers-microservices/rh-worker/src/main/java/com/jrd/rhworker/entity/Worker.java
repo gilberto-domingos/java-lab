@@ -1,4 +1,4 @@
-package com.jrd.rhworker.model;
+package com.jrd.rhworker.entity;
 
 import java.io.Serializable;
 import java.util.Objects;

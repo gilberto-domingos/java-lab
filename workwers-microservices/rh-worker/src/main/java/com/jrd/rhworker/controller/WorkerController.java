@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jrd.rhworker.model.Worker;
+import com.jrd.rhworker.entity.Worker;
 import com.jrd.rhworker.service.WorkerService;
 
 @RestController

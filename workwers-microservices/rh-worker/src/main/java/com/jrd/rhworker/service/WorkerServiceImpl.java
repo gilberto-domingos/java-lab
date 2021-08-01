@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jrd.rhworker.model.Worker;
+import com.jrd.rhworker.entity.Worker;
 import com.jrd.rhworker.repository.WorkerRepository;
 
 @Service

@@ -17,4 +17,5 @@ Sistema com Microserviços - Trabalhadores, Renda diária, Dias trabalhados e Fo
 5 - Eureka Server - registros dos microserviços e suas instancias
 
 6 - Eureka Client -
-      portas fixas    
+      portas fixas, Porta aleatória 
+          

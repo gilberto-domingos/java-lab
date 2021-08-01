@@ -1,13 +1,13 @@
-package com.jrd.rhconfigserver;
+package com.jrd.rhuser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RhConfigServerApplication {
+public class RhUserApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RhConfigServerApplication.class, args);
+		SpringApplication.run(RhUserApplication.class, args);
 	}
 
 }

@@ -7,7 +7,7 @@ Sistema com Microserviços - Trabalhadores, Renda diária, Dias trabalhados e Fo
 1 - Crição e implementação do projeto hr-worker 
 
 2 - Criação implementação projeto hr-payroll, 
-            payroll não é persistência, apenas instancia pagamentos e algumas regras de negócios,  
+            payroll não é persistência, apenas instancia pagamentos e ou regras de negócios,  
             serviço registrado como componente para poder ser injetado em outras classes
             
 3 - Feign client - faz com que seja simples escrever clientes de webservice, pois basta escrever a interface com o serviço sem se preocupar em escrever aspectos de comunicação entre projetos integrado com ferramentas do Spring Cloud 
@@ -24,6 +24,7 @@ Sistema com Microserviços - Trabalhadores, Renda diária, Dias trabalhados e Fo
 
 9 - Zuul Timeout - Mesmo se o Hystrix e o Ribbon configurado em um microservice , se o zuul não tiver seu timeout configurado, para ele será um problema de timeout, e se o timeout estiver configurando somente no Zuul o Hystrix vai chamar o método alternativo fallbackMethod no microserviço específico.
           
+10 - Usuario - user microservice         
 
-10 - Configuração Centralizada - Quando  um microserviço é levantado, antes de se registrar no Eureka Server, ele busca as configurações no repositório central de configurações.         
+11 -Atenticação e Autorização  - OAth2    
           

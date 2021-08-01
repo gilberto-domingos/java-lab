@@ -1,10 +1,10 @@
-package com.jrd.rhconfigserver;
+package com.jrd.rhuser;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RhConfigServerApplicationTests {
+class RhUserApplicationTests {
 
 	@Test
 	void contextLoads() {

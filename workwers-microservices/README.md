@@ -16,10 +16,14 @@ Sistema com Microserviços - Trabalhadores, Renda diária, Dias trabalhados e Fo
     
 5 - Eureka Server - registros dos microserviços e suas instancias
 
-6 - Eureka Client -
-      portas fixas, Porta aleatória 
+6 - Eureka Client - portas fixas, Portas aleatórias 
       
 7 -  Hystrix para tolerância a falhas, resposta alternativas, para falhas, timeout, serviços caídos etc... fallbackMethod
 
 8 - hr-api-gateway-zuul, é um API Gateway que negocia com todas as requisições e realiza todo tipo de operação com elas inclusive roteamento dinâmico já com balanceamento de carga (no lado do servidor), para isto ele utiliza o Netflix Ribbon para procurar todas as instâncias dos serviços disponíveis no Service Discovery (Netflix Eureka Server).
+
+9 - Zuul Timeout - Mesmo se o Hystrix e o Ribbon configurado em um microservice , se o zuul não tiver seu timeout configurado, para ele será um problema de timeout, e se o timeout estiver configurando somente no Zuul o Hystrix vai chamar o método alternativo fallbackMethod no microserviço específico.
+          
+
+10 - Configuração Centralizada - Quando  um microserviço é levantado, antes de se registrar no Eureka Server, ele busca as configurações no repositório central de configurações.         
           

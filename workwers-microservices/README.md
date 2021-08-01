@@ -1,6 +1,5 @@
 # workwers-microservices
 
-Obs: Está em andamento ficará pronto em uma semana
 
 Sistema com Microserviços - Trabalhadores, Renda diária, Dias trabalhados e Folha de pagamentos
 
@@ -12,4 +11,6 @@ Sistema com Microserviços - Trabalhadores, Renda diária, Dias trabalhados e Fo
             serviço registrado como componente para poder ser injetado em outras classes
             
 3 - Feign client - forma alternativa comunicação entre projetos integrado com ferramentas do Spring Cloud
+
+4 - Balanceamento de carga com Ribbon
     

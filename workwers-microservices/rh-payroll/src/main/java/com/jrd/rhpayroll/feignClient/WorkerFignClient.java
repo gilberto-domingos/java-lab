@@ -10,7 +10,7 @@ import com.jrd.rhpayroll.model.Worker;
 
 
 @Component
-@FeignClient(name = "rh-worker", url = "localhost:8001", path = "/workers")
+@FeignClient(name = "rh-worker", path = "/workers")
 public interface WorkerFignClient {
 	
 	@GetMapping("/{id}")

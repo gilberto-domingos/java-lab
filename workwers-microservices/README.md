@@ -6,9 +6,7 @@ Sistema com Microserviços - Trabalhadores, Renda diária, Dias trabalhados e Fo
 
 1 - Crição e implementação do projeto hr-worker 
 
-2 - Criação implementação projeto hr-payroll, 
-            payroll não é persistência, apenas instancia pagamentos e ou regras de negócios,  
-            serviço registrado como componente para poder ser injetado em outras classes
+2 - Criação implementação projeto hr-payroll, payroll não é persistência, apenas instancia pagamentos e ou regras de negócios, serviço registrado como componente para poder ser injetado em outras classes
             
 3 - Feign client - faz com que seja simples escrever clientes de webservice, pois basta escrever a interface com o serviço sem se preocupar em escrever aspectos de comunicação entre projetos integrado com ferramentas do Spring Cloud 
 

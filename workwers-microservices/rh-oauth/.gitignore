@@ -31,22 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### Eclipse ###
-
-.metadata
-
-### images ###
-
-images-workers-micro
-
-### drafts ###
-
-drafts-workers-microservice
-
-*.properties
-
-src/main/resources/application.properties
-
-
-

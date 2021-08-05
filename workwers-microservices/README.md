@@ -26,7 +26,8 @@ Sistema com Microserviços - Trabalhadores, Renda diária, Dias trabalhados e Fo
 Carga inicial da base de dados (seeding)        
 
 11 -Atenticação e Autorização  - OAuth2,  <br>
-deixando o spring security por último para não ficar bloqueando os testes na implementação.
+deixando o spring security por último para não ficar bloqueando os testes na implementação.<br>
+User Feign Client para comunicar o OAuth2 com o User<br>
 
 12 - Docker - a fazer após o término autenticação <br>
   

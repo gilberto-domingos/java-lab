@@ -13,7 +13,7 @@ import com.jrd.rhoauth.entity.User;
 @FeignClient(name = "rh-user", path = "/users")
 public interface UserFeignClient {
 	
-	@GetMapping("/findEmail")
+	@GetMapping("/search")
 	public ResponseEntity<User> findEmail(@RequestParam String email);
 
 }

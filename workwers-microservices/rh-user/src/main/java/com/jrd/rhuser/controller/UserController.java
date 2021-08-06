@@ -37,7 +37,7 @@ public class UserController {
 		return ResponseEntity.ok(userId);
 	}
 	
-	@GetMapping("/findEmail")
+	@GetMapping("/search")
 	public ResponseEntity<User> findEmail(@RequestParam String email) {
 		User user = this.userService.findEmail(email);
 		

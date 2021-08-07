@@ -25,7 +25,7 @@ Sistema com Microserviços - Trabalhadores, Renda diária, Dias trabalhados e Fo
 10 - Usuario - user microservice -  User, Role, associação muitos para muitos <br>
 Carga inicial da base de dados (seeding)        
 
-11 -Atenticação e Autorização  - OAuth2,  <br>
+11 -Atenticação e Autorização  - OAuth2, Em andamento  <br> 
 deixando o spring security por último para não ficar bloqueando os testes na implementação.<br>
 User Feign Client para comunicar o OAuth2 com o User<br>
 

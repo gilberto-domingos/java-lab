@@ -46,7 +46,6 @@ drafts-workers-microservice
 
 *.properties
 
-src/main/resources/application.properties
 
 
 

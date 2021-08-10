@@ -1,6 +1,6 @@
 # Observação :
 
-Este projeto teve como objetivo estudo e esclarecimento de arquitetura projeto em microserviços, roteamento de portas, comunicação entre os modulos dos microserviços, terminando com a segurança token OAuth2,  por isso não há tratamento e excessões
+Este projeto teve como objetivo esclarecimento de arquitetura projeto em microserviços, roteamento de portas, comunicação entre os modulos dos microserviços, terminando com a segurança token OAuth2,  por isso não há tratamento e excessões
 
 ----------------------------------------------------------------------------------------------------------------
 

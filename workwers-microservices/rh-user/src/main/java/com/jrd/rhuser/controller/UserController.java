@@ -1,12 +1,16 @@
 package com.jrd.rhuser.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jrd.rhuser.entity.User;
@@ -37,12 +41,14 @@ public class UserController {
 		return ResponseEntity.ok(userId);
 	}
 	
+	
 	@GetMapping("/search")
-	public ResponseEntity<User> findEmail(@RequestParam String email) {
-		User user = this.userService.findEmail(email);
-		
-		return ResponseEntity.ok(user);
+	@ResponseBody
+	public ResponseEntity<User>findByEmail(@RequestParam("email") String email) {
+		User obj = this.userService.findByEmail(email);
+		return ResponseEntity.ok(obj);
 	}
+	
 	
 
 }

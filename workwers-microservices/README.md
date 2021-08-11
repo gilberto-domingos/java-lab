@@ -1,4 +1,6 @@
-# Observação :
+#  Workwers-Microservices
+
+Observação :
 
 Este projeto teve como objetivo esclarecimento de arquitetura projeto em microserviços, roteamento de portas, comunicação entre os modulos dos microserviços, terminando com a segurança token OAuth2,  por isso não há tratamento e excessões
 
@@ -31,11 +33,11 @@ Sistema com Microserviços - Trabalhadores, Renda diária, Dias trabalhados e Fo
 10 - Usuario - user microservice -  User, Role, associação muitos para muitos <br>
 Carga inicial da base de dados (seeding)        
 
-11 -Atenticação e Autorização  - OAuth2, Em andamento  <br> 
+11 -Atenticação e Autorização  - OAuth2  <br> 
 deixando o spring security por último para não ficar bloqueando os testes na implementação.<br>
 User Feign Client para comunicar o OAuth2 com o User<br>
 
-12 - Docker - a fazer após o término autenticação <br>
+12 - Docker - ... Em andamento <br>
   
  Container de hr-eureka-server, Container de hr-worker, Container de hr-user, Container de hr-payroll, Container de hr-oauth, Container de hr-api-gateway-zuul
           

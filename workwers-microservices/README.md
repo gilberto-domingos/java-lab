@@ -36,7 +36,5 @@ Carga inicial da base de dados (seeding)
 11 -Atenticação e Autorização  - OAuth2  <br> 
 User Feign Client para comunicar o OAuth2 com o User<br>
 
-12 - Docker - ... Em andamento <br>
-  
- Container de hr-eureka-server, Container de hr-worker, Container de hr-user, Container de hr-payroll, Container de hr-oauth, Container de hr-api-gateway-zuul
+
           

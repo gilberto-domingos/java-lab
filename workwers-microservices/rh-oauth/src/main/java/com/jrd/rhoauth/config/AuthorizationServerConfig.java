@@ -24,7 +24,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	private JwtAccessTokenConverter accessTokenConverter;
 
 	@Autowired
-	private JwtTokenStore tokeStore;
+	private JwtTokenStore tokenStore;
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
@@ -49,7 +49,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 		 endpoints.authenticationManager(authenticationManager)
-		          .tokenStore(tokeStore)
+		          .tokenStore(tokenStore)
 		          .accessTokenConverter(accessTokenConverter);
 	}
 

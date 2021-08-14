@@ -17,5 +17,5 @@ Primeiro vamos violar o princípio o aberto/fechado depois vamos refatorar o có
 Princípio Aberto/Fechado - "Aberto para extensão , fechado para modificação" , porque alterar códigos existentes é perigoso a afetar heranças.
 Vantagens : Minimiza custo da aplicação, ter cada vez mais classes menores e objetivas, mais faceis de ser extensiveis, melhor manutenção,
 minimiza risco de bugs regressiveis se motivos e em classes derivadas, e também  reforça outro princípio como o de singularidade.
-Formas de usar : Herança, Interface, ou até com padrões de projeto como factory por exemplo ajuda a isolar a lógica das classes, e com strategys com composição
+Formas de usar : Herança, Interface, ou até com padrões de projeto como factory por exemplo ajuda a isolar a lógica das classes, com strategys e composição
 

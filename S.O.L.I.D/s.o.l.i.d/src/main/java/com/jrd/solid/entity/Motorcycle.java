@@ -1,25 +1,51 @@
 package com.jrd.solid.entity;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import java.util.List;
 
-@EntityScan
-public class Motorcycle extends Vehicle {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-	public Motorcycle() { };
+@Entity
+@Table(name = "tb_motorcycle")
+public class Motorcycle  {	
+	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	private Long id;	
+	
+	@OneToMany(mappedBy = "id")
+	private List<Vehicle> vehicle;
+	
+	public Motorcycle() { }
 
-	public Motorcycle(String color, String year, double engine) {
-		this.color = color;
-		this.year = year;
-		this.engine = engine;
+	public Motorcycle(List<Vehicle> vehicle) {
+		super();
+		this.vehicle = vehicle;
+	}
 
-		configureMotorcycle();
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public List<Vehicle> getVehicle() {
+		return vehicle;
+	}
+
+	public void setVehicle(List<Vehicle> vehicle) {
+		this.vehicle = vehicle;
 	}
 	
+	
+	
+	
 
-	public void configureMotorcycle() {
-		System.out.println("Criando uma moto : " + year + " " + engine + " cilindradas ");
-
-		startVehicle();
-	}
 
 }

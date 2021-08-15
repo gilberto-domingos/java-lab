@@ -19,7 +19,11 @@ Vantagens : Minimiza custo da aplicação, ter cada vez mais classes menores e o
 minimiza risco de bugs regressiveis se motivos e em classes derivadas, e também  reforça outro princípio como o de singularidade.
 Formas de usar : Herança, Interface, ou até com padrões de projeto como factory por exemplo ajuda a isolar a lógica das classes, com strategys e composição
 
+----------------------------------------------------------------------------------------------------
 
 "L" - LSP - Princípio da Substituição de Liskov. As classes base devem ser substituíveis por suas classes derivadas. 
 
-Vamos supo que o Banco Nubank tenha o cartão de Crédito e Débito, 2 operações, uma validar o cartão e outra coletar o pagamento, 
+Vamos supor que o Banco Nubank tenha o cartão de Crédito e Débito, 2 operações, uma validar o cartão e outra coletar o pagamento, 
+vamos imaginar que o Banco chega e diz que agora os clientes vão ter uma recompensa em saldo de pontos (Rewards) , então precisa sofrer alterações sem prejudicar o que já estava pronto, então aplicando substituição de Liskov... com a programação orientada a interface apliquei novas funcionalidades sem prejudicar o que já estava feito ... 
+
+----------------------------------------------------------------------------------------------------

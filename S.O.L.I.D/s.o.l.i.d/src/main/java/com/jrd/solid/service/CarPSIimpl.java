@@ -1,6 +1,6 @@
 package com.jrd.solid.service;
 
-public class CarPSIimpl implements IVehiclePSI {
+public class CarPSIimpl implements IVehiclePSI, CarPSI {
 	
 	private String color;
 	private String year;
@@ -26,12 +26,7 @@ public class CarPSIimpl implements IVehiclePSI {
 		System.out.println("Criando um carro " + color + " " + year + " " + engine + " " + seats + " assentos" );
 		startVehicle();
 	}
-
-	@Override
-	public void configureMotorcycle(String color, String year, double engine) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
 	public void startVehicle() {

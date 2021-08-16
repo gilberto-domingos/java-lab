@@ -41,7 +41,8 @@ Muitas interfaces específicas são melhores do que uma interface única. Este f
 "D" - Dependency Inversion Principle - Princípio da Inversão da Dependência :
 
 Dependa de uma abstração e não de uma implementação. Com este príncipio é possivel nós criarmos módulos que não estão ligados, por isso 
-é mais fácil alterar quando nós precisamos e para dar manutenção. Todo sistema é dividido em pelo menos dois tipos de módulos, módulos de
+é mais fácil alterar quando nós precisamos e para dar manutenção. <br>
+Todo sistema é dividido em pelo menos dois tipos de módulos, módulos de
 alto nível(tem haver com regras de negócios, ojetivo da aplicação, o que ela faz) e módulos de baixo nível(tarefas internas, como auth, etc),
 então modulos de alto nível "não" devem depender dos módulos de baixo nível, "ambos" devem depender de "abstração" e abstrações não devem
 depender de detalhes. <br>

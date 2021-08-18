@@ -1,5 +1,7 @@
 # Design-Patterns
 
+ ------------ CRIACIONAL ------------ 
+
 Factory Method Pattern - Padrão de Método de Fábrica
 
 O Factory Method Pattern permite que as subclasses escolham o tipo de objetos a serem criados.
@@ -27,9 +29,20 @@ Quando o sistema precisa ser configurado com um de uma família de vários objet
 
 -------------------------------------------------------------------------------------------------------
 
+Builder Design Pattern - Padrão Builder
 
+Uso de Builder Pattern : é um padrão bem conhecido no mundo Java. É especialmente útil quando você precisa criar um objeto
+com muitas opções possíveis de configuração.
+O Builder Pattern diz que "construir um objeto complexo a partir de objetos simples usando uma abordagem passo a passo"
+É usado principalmente quando o objeto não pode ser criado em uma única etapa, como na desserialização de um objeto complexo.
 
+Vantagem :
 
+Ele fornece uma separação clara entre a construção e a representação de um objeto.
+Ele fornece melhor controle sobre o processo de construção.
+Suporta alterar a representação interna dos objetos.
+
+----------------------------------------------------------------------------------------------------------------
 
 
 

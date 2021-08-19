@@ -44,8 +44,28 @@ Suporta alterar a representação interna dos objetos.
 
 ----------------------------------------------------------------------------------------------------------------
 
+Adapter Pattern - Padrão Adaptador
+
+"Converte a interface de uma classe em outra interface que um cliente deseja". Também é conhecido como Wrapper.
+
+Fornecer a interface de acordo com os requisitos do cliente ao usar os serviços de uma classe com uma interface diferente.
+exemplos: 
 
 
+um sistema que gera tudo xml compartilhar agora com json padrão diferente, 
+um sistema gateway de pagamento integrar com outro sistema que faz as mesmas operações com formas diferentes tipo legado, api etc...
+
+
+Vantagem : 
+
+Ele permite que dois ou mais objetos anteriormente incompatíveis interajam.
+Ele permite a reutilização da funcionalidade existente.
+
+Uso do adapter :
+
+Quando um objeto precisa utilizar uma classe existente com uma interface incompatível.
+Quando você deseja criar uma classe reutilizável que coopere com classes que não possuem interfaces compatíveis.
+Quando você deseja criar uma classe reutilizável que coopera com classes que não têm interfaces compatíveis
 
 
 

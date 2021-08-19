@@ -21,7 +21,7 @@ public class Main {
 		
 	//-------------------------------------------------//	
 		
-		// criando ao caminhão 
+		// criando o caminhão 
 		TruckBuilder truckBuilder = new TruckBuilder();
 		director.constructTruck(truckBuilder);
 		

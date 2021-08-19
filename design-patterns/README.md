@@ -1,6 +1,6 @@
 # Design-Patterns
 
- ------------ CRIACIONAL ------------ 
+------------------------------------------------- CRIACIONAL ---------------------------------------------------
 
 Factory Method Pattern - Padrão de Método de Fábrica
 
@@ -44,14 +44,15 @@ Suporta alterar a representação interna dos objetos.
 
 ----------------------------------------------------------------------------------------------------------------
 
+------------------------------------------------- ESTRUTURAL ---------------------------------------------------
+
 Adapter Pattern - Padrão Adaptador
 
 "Converte a interface de uma classe em outra interface que um cliente deseja". Também é conhecido como Wrapper.
 
 Fornecer a interface de acordo com os requisitos do cliente ao usar os serviços de uma classe com uma interface diferente.
+
 exemplos: 
-
-
 um sistema que gera tudo xml compartilhar agora com json padrão diferente, 
 um sistema gateway de pagamento integrar com outro sistema que faz as mesmas operações com formas diferentes tipo legado, api etc...
 
@@ -66,6 +67,51 @@ Uso do adapter :
 Quando um objeto precisa utilizar uma classe existente com uma interface incompatível.
 Quando você deseja criar uma classe reutilizável que coopere com classes que não possuem interfaces compatíveis.
 Quando você deseja criar uma classe reutilizável que coopera com classes que não têm interfaces compatíveis
+
+
+----------------------------------------------------------------------------------------------------------------
+
+
+
+Bridge Design Pattern - Padrão de Design de Ponte
+
+Um Bridge Pattern diz que basta "desacoplar a abstração funcional da implementação para que as duas possam variar independentemente".
+
+O padrão de ponte também é conhecido como alça ou corpo.
+
+Vantagem:
+Ele permite a separação da implementação da interface.
+Além disso, melhora a extensibilidade.
+Ele permite ocultar os detalhes de implementação do cliente.
+
+Uso da ponte:
+Quando você não quer uma ligação permanente entre a abstração funcional e sua implementação.
+Quando a abstração funcional e sua implementação precisam ser estendidas usando subclasses.
+É usado principalmente nos locais onde as mudanças são feitas na implementação não afetam os clientes.
+
+exemplo : 
+Imagine que você precisar fazer uma live e necessita ser transmita para 3 plataformas diferentes com Youtube, TwitchTV e Facebook.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

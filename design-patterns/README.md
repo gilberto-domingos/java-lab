@@ -72,7 +72,6 @@ Quando você deseja criar uma classe reutilizável que coopera com classes que n
 ----------------------------------------------------------------------------------------------------------------
 
 
-
 Bridge Design Pattern - Padrão de Design de Ponte
 
 Um Bridge Pattern diz que basta "desacoplar a abstração funcional da implementação para que as duas possam variar independentemente".
@@ -93,8 +92,29 @@ exemplo :
 Imagine que você precisar fazer uma live e necessita ser transmita para 3 plataformas diferentes com Youtube, TwitchTV e Facebook.
 
 
+------------------------------------------------------------------------------------------------------------------
 
+------------------------------------------------- COMPORTAMENTAL ---------------------------------------------------
 
+Chain Of Responsibility Design Pattern - Cadeia de Responsabilidade Design Patterns
+
+Na cadeia de responsabilidade, o remetente envia uma solicitação a uma cadeia de objetos. A solicitação pode ser tratada por qualquer objeto da cadeia.
+
+Um padrão de cadeia de responsabilidade diz que apenas "evite acoplar o remetente de uma solicitação ao seu receptor, dando a vários objetos a chance de lidar com a solicitação". Por exemplo, um caixa eletrônico usa o Chain of Responsibility Pattern no processo de doação de dinheiro.
+
+Em outras palavras, podemos dizer que normalmente cada receptor contém a referência de outro receptor. Se um objeto não pode lidar com a solicitação, ele passa o mesmo para o próximo receptor e assim por diante.
+
+Vantagem :
+
+Reduz o acoplamento.
+Ele adiciona flexibilidade ao atribuir responsabilidades aos objetos.
+Ele permite que um conjunto de classes atue como uma. 
+Eventos produzidos em uma classe podem ser enviados para outras classes manipuladoras com a ajuda de composição.
+
+Quando usado :
+
+É usado quando mais de um objeto pode manipular uma solicitação e o manipulador é desconhecido.
+Quando o grupo de objetos que pode atender a solicitação deve ser especificado de forma dinâmica.
 
 
 

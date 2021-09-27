@@ -4,7 +4,6 @@ package com.jrd.producer.resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import com.jrd.producer.service.MensagemService;
 
 @RestController

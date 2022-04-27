@@ -32,8 +32,12 @@ build/
 ### VS Code ###
 .vscode/
 
+### images ###
+    images
+
 ### eclipse ###
 /.metadata/
 
 ### properties###
 *.properties
+

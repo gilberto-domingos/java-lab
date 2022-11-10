@@ -1,3 +1,5 @@
-# Junit5-Mockito-Java17
+#Testes com JUnit 5 Mockito e Spring Boot (REST APIs)
 
-1 - Lombok, local config, findById,  banco h2 só para realização de exercícios de testes unitarios e mockito
+
+1 - Lombok,  findById, local config, (Perfil de Testes) banco h2 só para realização de exercícios de testes unitarios e mockito
+2 - Tratamento de excessão para informações não encontradas, service exception(ObjectNotFoundException), controller exception Handler, StandardError

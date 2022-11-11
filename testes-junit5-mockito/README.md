@@ -1,4 +1,4 @@
-#Testes com JUnit 5 Mockito e Spring Boot (REST APIs)
+#Testes Unitários, Cobertura com JUnit 5 Mockito e Spring Boot (REST APIs)
 
 
 > 1 - Lombok, Implementação Endpoint findById, local config, (Perfil de Testes) banco h2 só para realização de exercícios de testes unitarios e mockito. <br />
@@ -6,4 +6,5 @@
 > 3 - Implementação Padrão DTO, Model Mapper. <br />
 > 4 - Implementação Endpoint findAll. <br />
 > 5 - Refatoração do Controller no Endpoint findAll. <br />
+> 6 - Implementação do Endpoint create no padrão DTO. <br />
 

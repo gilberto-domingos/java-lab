@@ -8,3 +8,4 @@
 > 5 - Refatoração do Controller no Endpoint findAll. <br />
 > 6 - Implementação do Endpoint create no padrão DTO. <br />
 > 7 - Tratamento de Excessão para email já cadastrado. <br />
+> 8 - Implementação do Endpoint update e Excessão para email já cadastrado na atualização. <br />

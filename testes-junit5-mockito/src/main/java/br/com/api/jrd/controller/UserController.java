@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,13 +30,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@PostMapping
-	public ResponseEntity<UserDTO>create(@RequestBody UserDTO obj){
-	    URI uri = ServletUriComponentsBuilder
-	    		.fromCurrentRequest().path("/id")
-	    		.buildAndExpand(userService.create(obj).getId()).toUri();
-		return ResponseEntity.created(uri).build();
-	}
+	
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<UserDTO> findById(@PathVariable Long id) {
@@ -50,10 +45,26 @@ public class UserController {
 				.collect(Collectors.toList()));
 	}
 	
+	@PostMapping
+	public ResponseEntity<UserDTO>create(@RequestBody UserDTO obj){
+	    URI uri = ServletUriComponentsBuilder
+	    		.fromCurrentRequest().path("/id")
+	    		.buildAndExpand(userService.create(obj).getId()).toUri();
+		return ResponseEntity.created(uri).build();
+	}
+	
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<UserDTO>update(@PathVariable Long id, @RequestBody UserDTO obj){
 		obj.setId(id);
 		return ResponseEntity.ok().body(modelMapper.map(userService.update(obj), UserDTO.class));
+	}
+	
+	@DeleteMapping(value = "/{id}")
+	public ResponseEntity<UserDTO>delete(@PathVariable Long id){
+		findById(id);
+		userService.delete(id);
+		return ResponseEntity.noContent().build();
+		
 	}
 	
 	

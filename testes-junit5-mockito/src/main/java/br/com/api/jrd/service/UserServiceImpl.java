@@ -40,7 +40,13 @@ public class UserServiceImpl implements UserService {
 		return userRepository.save(modelmapper.map(obj, User.class));
 	}
 
-	@SuppressWarnings("unused")
+	
+	@Override
+	public User update(UserDTO obj) {
+		findByEmail(obj);
+		return userRepository.save(modelmapper.map(obj,User.class));
+	}
+	
 	private void findByEmail(UserDTO obj) {
 
 		Optional<User> user = userRepository.findByEmail(obj.getEmail());
@@ -52,10 +58,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User update(UserDTO obj) {
-		findByEmail(obj);
-		return userRepository.save(modelmapper.map(obj,User.class));
+	public void delete(Long id) {
+       userRepository.deleteById(id);		
 	}
+
+	
 
 }
 

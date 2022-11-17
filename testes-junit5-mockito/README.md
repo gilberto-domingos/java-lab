@@ -16,6 +16,11 @@
 > 13 - Teste UserService ObjectNotFound "Informação não encontrada". <br/>
 > 14 - Teste UserService no Endpoint findAll  whenFidAllThenReturnAnListOfUsers. <br/>
 > 15 - Teste UserService create  whenCreateThenReturnSucess.  <br/>
+> 16 - Teste UserService findByEmail  whenCreateThenReturnAnDataIntegratyViolationException.  <br/>
+> 17 - Teste UserService update  whenUpdateThenReturnSuccess.  <br/>
+> 18 - Teste UserService findByEmail  whenUpdateThenReturnAnDataIntegrityViolationException.  <br/>
+> 19 - Teste UserService delete  deleteWithSuccess.  <br/>
+> 20 - Teste UserService delete com exception whenDeleteThenReturnObjectNotFoundException.  <br/>
 
 
  

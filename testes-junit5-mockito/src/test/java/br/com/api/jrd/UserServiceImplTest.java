@@ -4,6 +4,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.List;
@@ -22,6 +26,7 @@ import br.com.api.jrd.dto.UserDTO;
 import br.com.api.jrd.entity.User;
 import br.com.api.jrd.repository.UserRepository;
 import br.com.api.jrd.service.UserServiceImpl;
+import br.com.api.jrd.service.exceptions.DataIntegratyViolationException;
 import br.com.api.jrd.service.exceptions.ObjectNotFoundException;
 
 @SpringBootTest
@@ -34,7 +39,7 @@ public class UserServiceImplTest {
 	private static final String PASSWORD = "123";
 
 	private static final String INFOMACAO_NAO_ENCONTRADA = "Informação não encontrada";
-	private static final String E_MAIL_JA_CADASTRADO_NO_SISTEMA = "E-mail já cadastrado no sistema";
+	private static final String EMAIL_JA_CADASTRADO_NO_SISTEMA = "Email já cadastrado no sistema";
 
 	@InjectMocks
 	private UserServiceImpl userServiceImpl;
@@ -71,13 +76,14 @@ public class UserServiceImplTest {
 
 	@Test
 	void whenFindByIdThenReturnAnObjectNotFoundException() {
-		when(userRepository.findById(anyLong())).thenThrow(new ObjectNotFoundException("Informação não encontrada"));
+		when(userRepository.findById(anyLong()))
+		.thenThrow(new ObjectNotFoundException(INFOMACAO_NAO_ENCONTRADA));
 	 
 		try {
 			userServiceImpl.findById(ID);
 		} catch (Exception ex) {
 			assertEquals(ObjectNotFoundException.class, ex.getClass());
-			assertEquals("Informação não encontrada", ex.getMessage());
+			assertEquals(INFOMACAO_NAO_ENCONTRADA, ex.getMessage());
 		}
 	
 	}
@@ -105,6 +111,7 @@ public class UserServiceImplTest {
 		 when(userRepository.save(any())).thenReturn(user);
 		 
 		 User response = userServiceImpl.create(userDTO);
+		 
 		 assertNotNull(response);
 		 assertEquals(User.class, response.getClass());
 		 assertEquals(ID, response.getId());
@@ -114,12 +121,65 @@ public class UserServiceImplTest {
     	 
      }
 	 
+	 @Test
+	 void whenCreateThenReturnAnDataIntegratyViolationException() {
+		 when(userRepository.findByEmail(anyString())).thenReturn(optionalUser);
+		 
+		 try {
+			optionalUser.get().setId((long) 2); 
+			userServiceImpl.create(userDTO);
+		} catch (Exception ex) {
+			assertEquals(DataIntegratyViolationException.class, ex.getClass());
+			assertEquals(EMAIL_JA_CADASTRADO_NO_SISTEMA, ex.getMessage());
+		}
+	 }
 	 
 	 @Test
-	 void tttt() {
-		 
-	 }
-	
+	    void whenUpdateThenReturnSuccess() {
+	        when(userRepository.save(any())).thenReturn(user);
+
+	        User response = userServiceImpl.update(userDTO);
+
+	        assertNotNull(response);
+	        assertEquals(User.class, response.getClass());
+	        assertEquals(ID, response.getId());
+	        assertEquals(NAME, response.getName());
+	        assertEquals(EMAIL, response.getEmail());
+	        assertEquals(PASSWORD, response.getPassword());
+	    }
+	 
+	        @Test
+	    	void whenUpdateThenReturnAnDataIntegrityViolationException() {
+	        when(userRepository.findByEmail(anyString())).thenReturn(optionalUser);
+
+	        try{
+	            optionalUser.get().setId((long) 2);
+	            userServiceImpl.create(userDTO);
+	        } catch (Exception ex) {
+	            assertEquals(DataIntegratyViolationException.class, ex.getClass());
+	            assertEquals(EMAIL_JA_CADASTRADO_NO_SISTEMA, ex.getMessage());
+	        }
+	    }
+	        
+	        @Test
+	        void deleteWithSuccess() {
+	            when(userRepository.findById(anyLong())).thenReturn(optionalUser);
+	            doNothing().when(userRepository).deleteById(anyLong());
+	            userServiceImpl.delete(ID);
+	            verify(userRepository, times(1)).deleteById(anyLong());
+	        }     
+	        
+	        @Test
+	        void whenDeleteThenReturnObjectNotFoundException() {
+	            when(userRepository.findById(anyLong()))
+	                    .thenThrow(new ObjectNotFoundException(INFOMACAO_NAO_ENCONTRADA));
+	            try {
+	                userServiceImpl.delete(ID);
+	            } catch (Exception ex) {
+	                assertEquals(ObjectNotFoundException.class, ex.getClass());
+	                assertEquals(INFOMACAO_NAO_ENCONTRADA, ex.getMessage());
+	            }
+	        }
 	
 
 	private void startUser() {

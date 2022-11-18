@@ -22,6 +22,9 @@
 > 19 - Teste UserService delete  deleteWithSuccess.  <br/>
 > 20 - Teste UserService delete com exception whenDeleteThenReturnObjectNotFoundException.  <br/>
 
+> 21 - Classe de Teste UserController iniciada. <br>
+
+
 
  
 

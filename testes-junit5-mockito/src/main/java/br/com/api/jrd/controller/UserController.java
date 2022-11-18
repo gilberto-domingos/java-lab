@@ -24,15 +24,18 @@ import br.com.api.jrd.service.UserService;
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
+	
+	private static final String ID = "/{ID}";
 
-	private ModelMapper modelMapper = new ModelMapper();
-
+	@Autowired
+	private ModelMapper modelMapper;
+	
 	@Autowired
 	private UserService userService;
 	
 	
 
-	@GetMapping(value = "/{id}")
+	@GetMapping(value = ID)
 	public ResponseEntity<UserDTO> findById(@PathVariable Long id) {
 		return ResponseEntity.ok().body(modelMapper.map(userService.findById(id), UserDTO.class));
 	}

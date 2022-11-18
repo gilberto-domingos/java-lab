@@ -76,111 +76,105 @@ public class UserServiceImplTest {
 
 	@Test
 	void whenFindByIdThenReturnAnObjectNotFoundException() {
-		when(userRepository.findById(anyLong()))
-		.thenThrow(new ObjectNotFoundException(INFOMACAO_NAO_ENCONTRADA));
-	 
+		when(userRepository.findById(anyLong())).thenThrow(new ObjectNotFoundException(INFOMACAO_NAO_ENCONTRADA));
+
 		try {
 			userServiceImpl.findById(ID);
 		} catch (Exception ex) {
 			assertEquals(ObjectNotFoundException.class, ex.getClass());
 			assertEquals(INFOMACAO_NAO_ENCONTRADA, ex.getMessage());
 		}
-	
+
 	}
-	
-	
+
 	@Test
 	void whenFidAllThenReturnAnListOfUsers() {
 		when(userRepository.findAll()).thenReturn(List.of(user));
-		
-		List<User>response = userServiceImpl.findAll();
-		
-	
+
+		List<User> response = userServiceImpl.findAll();
+
 		assertNotNull(response);
-		assertEquals(1,response.size());
+		assertEquals(1, response.size());
 		assertEquals(User.class, response.get(INDEX).getClass());
 		assertEquals(ID, response.get(INDEX).getId());
 		assertEquals(NAME, response.get(INDEX).getName());
 		assertEquals(EMAIL, response.get(INDEX).getEmail());
 		assertEquals(PASSWORD, response.get(INDEX).getPassword());
 	}
-	
-	
-	 @Test
-     void whenCreateThenReturnSucess() {
-		 when(userRepository.save(any())).thenReturn(user);
-		 
-		 User response = userServiceImpl.create(userDTO);
-		 
-		 assertNotNull(response);
-		 assertEquals(User.class, response.getClass());
-		 assertEquals(ID, response.getId());
-		 assertEquals(NAME,response.getName());
-		 assertEquals(EMAIL, response.getEmail());
-		 assertEquals(PASSWORD, response.getPassword());
-    	 
-     }
-	 
-	 @Test
-	 void whenCreateThenReturnAnDataIntegratyViolationException() {
-		 when(userRepository.findByEmail(anyString())).thenReturn(optionalUser);
-		 
-		 try {
-			optionalUser.get().setId((long) 2); 
+
+	@Test
+	void whenCreateThenReturnSucess() {
+		when(userRepository.save(any())).thenReturn(user);
+
+		User response = userServiceImpl.create(userDTO);
+
+		assertNotNull(response);
+		assertEquals(User.class, response.getClass());
+		assertEquals(ID, response.getId());
+		assertEquals(NAME, response.getName());
+		assertEquals(EMAIL, response.getEmail());
+		assertEquals(PASSWORD, response.getPassword());
+
+	}
+
+	@Test
+	void whenCreateThenReturnAnDataIntegratyViolationException() {
+		when(userRepository.findByEmail(anyString())).thenReturn(optionalUser);
+
+		try {
+			optionalUser.get().setId((long) 2);
 			userServiceImpl.create(userDTO);
 		} catch (Exception ex) {
 			assertEquals(DataIntegratyViolationException.class, ex.getClass());
 			assertEquals(EMAIL_JA_CADASTRADO_NO_SISTEMA, ex.getMessage());
 		}
-	 }
-	 
-	 @Test
-	    void whenUpdateThenReturnSuccess() {
-	        when(userRepository.save(any())).thenReturn(user);
+	}
 
-	        User response = userServiceImpl.update(userDTO);
+	@Test
+	void whenUpdateThenReturnSuccess() {
+		when(userRepository.save(any())).thenReturn(user);
 
-	        assertNotNull(response);
-	        assertEquals(User.class, response.getClass());
-	        assertEquals(ID, response.getId());
-	        assertEquals(NAME, response.getName());
-	        assertEquals(EMAIL, response.getEmail());
-	        assertEquals(PASSWORD, response.getPassword());
-	    }
-	 
-	        @Test
-	    	void whenUpdateThenReturnAnDataIntegrityViolationException() {
-	        when(userRepository.findByEmail(anyString())).thenReturn(optionalUser);
+		User response = userServiceImpl.update(userDTO);
 
-	        try{
-	            optionalUser.get().setId((long) 2);
-	            userServiceImpl.create(userDTO);
-	        } catch (Exception ex) {
-	            assertEquals(DataIntegratyViolationException.class, ex.getClass());
-	            assertEquals(EMAIL_JA_CADASTRADO_NO_SISTEMA, ex.getMessage());
-	        }
-	    }
-	        
-	        @Test
-	        void deleteWithSuccess() {
-	            when(userRepository.findById(anyLong())).thenReturn(optionalUser);
-	            doNothing().when(userRepository).deleteById(anyLong());
-	            userServiceImpl.delete(ID);
-	            verify(userRepository, times(1)).deleteById(anyLong());
-	        }     
-	        
-	        @Test
-	        void whenDeleteThenReturnObjectNotFoundException() {
-	            when(userRepository.findById(anyLong()))
-	                    .thenThrow(new ObjectNotFoundException(INFOMACAO_NAO_ENCONTRADA));
-	            try {
-	                userServiceImpl.delete(ID);
-	            } catch (Exception ex) {
-	                assertEquals(ObjectNotFoundException.class, ex.getClass());
-	                assertEquals(INFOMACAO_NAO_ENCONTRADA, ex.getMessage());
-	            }
-	        }
-	
+		assertNotNull(response);
+		assertEquals(User.class, response.getClass());
+		assertEquals(ID, response.getId());
+		assertEquals(NAME, response.getName());
+		assertEquals(EMAIL, response.getEmail());
+		assertEquals(PASSWORD, response.getPassword());
+	}
+
+	@Test
+	void whenUpdateThenReturnAnDataIntegrityViolationException() {
+		when(userRepository.findByEmail(anyString())).thenReturn(optionalUser);
+
+		try {
+			optionalUser.get().setId((long) 2);
+			userServiceImpl.create(userDTO);
+		} catch (Exception ex) {
+			assertEquals(DataIntegratyViolationException.class, ex.getClass());
+			assertEquals(EMAIL_JA_CADASTRADO_NO_SISTEMA, ex.getMessage());
+		}
+	}
+
+	@Test
+	void deleteWithSuccess() {
+		when(userRepository.findById(anyLong())).thenReturn(optionalUser);
+		doNothing().when(userRepository).deleteById(anyLong());
+		userServiceImpl.delete(ID);
+		verify(userRepository, times(1)).deleteById(anyLong());
+	}
+
+	@Test
+	void whenDeleteThenReturnObjectNotFoundException() {
+		when(userRepository.findById(anyLong())).thenThrow(new ObjectNotFoundException(INFOMACAO_NAO_ENCONTRADA));
+		try {
+			userServiceImpl.delete(ID);
+		} catch (Exception ex) {
+			assertEquals(ObjectNotFoundException.class, ex.getClass());
+			assertEquals(INFOMACAO_NAO_ENCONTRADA, ex.getMessage());
+		}
+	}
 
 	private void startUser() {
 		user = new User(ID, NAME, EMAIL, PASSWORD);
@@ -189,25 +183,3 @@ public class UserServiceImplTest {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

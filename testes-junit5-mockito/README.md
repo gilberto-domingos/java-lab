@@ -26,6 +26,7 @@
 > 22 - Teste Endpoint findById no UserController   whenFindByIdThenReturnSuccess. <br/> 
 > 23 - Teste Endpoint findAll no UserController   whenFindAllThenReturnAListOfUserDTO. <br/> 
 > 24 - Teste Endpoint create no UserController   whenCreateThenReturnCreated. <br/> 
+> 25 - Teste Endpoint update no UserController   whenUpdateThenReturnSuccess. <br/> 
 
 
 

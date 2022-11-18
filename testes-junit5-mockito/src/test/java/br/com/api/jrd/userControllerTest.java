@@ -133,9 +133,16 @@ public class userControllerTest {
 	
 
 	@Test
-	void deleteById() {
+    void whenDeleteThenReturnSuccess() {
+        doNothing().when(userService).delete(anyLong());
 
-	}
+        ResponseEntity<UserDTO> response = userController.delete(ID);
+
+        assertNotNull(response);
+        assertEquals(ResponseEntity.class, response.getClass());
+        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+        verify(userService, times(1)).delete(anyLong());
+    }
 
 	private void startUser() {
 		user = new User(ID, NAME, EMAIL, PASSWORD);

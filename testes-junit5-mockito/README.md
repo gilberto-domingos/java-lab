@@ -27,6 +27,7 @@
 > 23 - Teste Endpoint findAll no UserController   whenFindAllThenReturnAListOfUserDTO. <br/> 
 > 24 - Teste Endpoint create no UserController   whenCreateThenReturnCreated. <br/> 
 > 25 - Teste Endpoint update no UserController   whenUpdateThenReturnSuccess. <br/> 
+> 26 - Teste Endpoint delete no UserController   whenDeleteThenReturnSuccess. <br/> 
 
 
 

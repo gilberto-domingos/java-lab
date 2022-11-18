@@ -7,11 +7,21 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.ResponseEntity;
 
 import br.com.api.jrd.controller.UserController;
 import br.com.api.jrd.dto.UserDTO;
 import br.com.api.jrd.entity.User;
-import br.com.api.jrd.service.UserServiceImpl;
+import br.com.api.jrd.service.UserService;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.*;
+
 
 @SpringBootTest
 public class userControllerTest {
@@ -30,7 +40,7 @@ public class userControllerTest {
 	private UserController userController;
 
 	@Mock
-	private UserServiceImpl userServiceImpl;
+	private UserService userService;
 
 	@Mock
 	private ModelMapper modelMapper;
@@ -42,15 +52,26 @@ public class userControllerTest {
 
 	}
 
+	
 	@Test
-	void findById() {
+    void whenFindByIdThenReturnSuccess() {
+      when(userService.findById(anyLong())).thenReturn(user);
+      when(modelMapper.map(any(), any())).thenReturn(userDTO);
+      
+      ResponseEntity<UserDTO> response = userController.findById(ID);
 
-	}
+      assertNotNull(response);
+      assertNotNull(response.getBody());
+      assertEquals(ResponseEntity.class, response.getClass());
+      assertEquals(UserDTO.class, response.getBody().getClass());
 
-	@Test
-	void findAll() {
+      assertEquals(ID, response.getBody().getId());
+      assertEquals(NAME, response.getBody().getName());
+      assertEquals(EMAIL, response.getBody().getEmail());
+      assertEquals(PASSWORD, response.getBody().getPassword());
+        
+    }
 
-	}
 
 	@Test
 	void update() {

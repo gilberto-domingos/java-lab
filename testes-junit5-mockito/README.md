@@ -23,6 +23,7 @@
 > 20 - Teste UserService delete com exception whenDeleteThenReturnObjectNotFoundException.  <br/>
 
 > 21 - Classe de Teste UserController iniciada. <br>
+> 22 - Teste Endpoint findById no UserController   whenFindByIdThenReturnSuccess. <br/> 
 
 
 

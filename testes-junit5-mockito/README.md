@@ -24,6 +24,7 @@
 
 > 21 - Classe de Teste UserController iniciada. <br>
 > 22 - Teste Endpoint findById no UserController   whenFindByIdThenReturnSuccess. <br/> 
+> 23 - Teste Endpoint findAll no UserController   whenFindAllThenReturnAListOfUserDTO. <br/> 
 
 
 

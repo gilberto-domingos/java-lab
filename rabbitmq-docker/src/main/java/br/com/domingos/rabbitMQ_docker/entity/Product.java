@@ -7,13 +7,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class User {
-    private String name;
-    private String phone;
-    private String email;
+public class Product {
+    private Integer order;
+    private String product;
+    private String clientName;
 }
-
-
-
-
-

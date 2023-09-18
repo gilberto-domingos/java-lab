@@ -5,14 +5,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class UserMessageConfig {
+public class ProductMessageConfig {
 
-    public static final String NAME_QUEUE = "QueueUser";
-    public static final String NAME_EXCHANGE = "ExchangeUser";
-    public static final String ROUTING_KEY = "createUser";
+    public static final String NAME_QUEUE = "QueueProduct";
+    public static final String NAME_EXCHANGE = "ExchangeProduct";
+    public static final String ROUTING_KEY = "createProduct";
 
     @Bean
-    DirectExchange usuarioExchange() {
+    DirectExchange productExchange() {
         return new DirectExchange(NAME_EXCHANGE);
     }
 
@@ -23,7 +23,7 @@ public class UserMessageConfig {
 
     @Bean
     Binding binding() {
-        return BindingBuilder.bind(queue()).to(usuarioExchange()).with(ROUTING_KEY);
+        return BindingBuilder.bind(queue()).to(productExchange()).with(ROUTING_KEY);
     }
 
 }

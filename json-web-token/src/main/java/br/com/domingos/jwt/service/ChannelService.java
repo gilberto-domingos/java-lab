@@ -1,8 +1,8 @@
-package br.com.domingos.jwtoauth2.service;
+package br.com.domingos.jwt.service;
 
 
 
-import br.com.domingos.jwtoauth2.entity.Channel;
+import br.com.domingos.jwt.entity.Channel;
 
 import java.util.List;
 

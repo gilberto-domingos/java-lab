@@ -1,10 +1,10 @@
-package br.com.domingos.jwtoauth2.service;
+package br.com.domingos.jwt.service;
 
 import java.util.List;
 
 
-import br.com.domingos.jwtoauth2.repository.ChannelRepository;
-import br.com.domingos.jwtoauth2.entity.Channel;
+import br.com.domingos.jwt.repository.ChannelRepository;
+import br.com.domingos.jwt.entity.Channel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

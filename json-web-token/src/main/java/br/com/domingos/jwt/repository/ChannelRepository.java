@@ -1,6 +1,6 @@
-package br.com.domingos.jwtoauth2.repository;
+package br.com.domingos.jwt.repository;
 
-import br.com.domingos.jwtoauth2.entity.Channel;
+import br.com.domingos.jwt.entity.Channel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

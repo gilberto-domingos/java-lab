@@ -1,7 +1,7 @@
-package br.com.domingos.jwtoauth2.controller;
+package br.com.domingos.jwt.controller;
 
-import br.com.domingos.jwtoauth2.entity.Channel;
-import br.com.domingos.jwtoauth2.service.ChannelServiceImp;
+import br.com.domingos.jwt.entity.Channel;
+import br.com.domingos.jwt.service.ChannelServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

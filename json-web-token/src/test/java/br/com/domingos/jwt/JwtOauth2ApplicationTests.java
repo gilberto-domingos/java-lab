@@ -1,4 +1,4 @@
-package br.com.domingos.jwtoauth2;
+package br.com.domingos.jwt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

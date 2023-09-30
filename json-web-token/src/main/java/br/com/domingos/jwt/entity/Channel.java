@@ -1,4 +1,5 @@
-package br.com.domingos.jwtoauth2.entity;
+package br.com.domingos.jwt.entity;
+
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,17 +7,20 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table(name = "users")
-@Entity(name = "users")
+@Table(name = "channels")
+@Entity(name = "channels")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class User {
+public class Channel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String login;
-    private String password;
-    private String role;
+    @Column
+    private String channelName;
+    @Column
+    private String description;
+
 }

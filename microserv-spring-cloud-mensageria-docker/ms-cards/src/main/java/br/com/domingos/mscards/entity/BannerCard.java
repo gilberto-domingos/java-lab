@@ -1,2 +1,5 @@
-package br.com.domingos.mscards.entity;public enum BannerCard {
+package br.com.domingos.mscards.entity;
+
+public enum BannerCard {
+    MASTERCARD, VISA
 }

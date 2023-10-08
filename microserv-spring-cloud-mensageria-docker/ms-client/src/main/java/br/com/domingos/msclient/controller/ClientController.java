@@ -3,6 +3,7 @@ package br.com.domingos.msclient.controller;
 import br.com.domingos.msclient.entity.Client;
 import br.com.domingos.msclient.service.ClientService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,8 +15,15 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
+@Slf4j
 public class ClientController {
     private final ClientService clientService;
+
+    @GetMapping
+    public String status() {
+        log.info("status microservice clients");
+        return "ok";
+    }
 
     @PostMapping
     public ResponseEntity save(@RequestBody Client client) {

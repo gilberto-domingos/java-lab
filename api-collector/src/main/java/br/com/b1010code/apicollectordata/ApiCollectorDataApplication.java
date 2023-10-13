@@ -12,14 +12,6 @@ public class ApiCollectorDataApplication {
 
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(ApiCollectorDataApplication.class, args);
-
-	//	Document adress = Jsoup.connect("https://pt.wikipedia.org/wiki/Dengue").get();
-
-		//Document String ip = doc.getRemoteHost();
-
-
-	//	System.out.println(adress.getElementsByTag("p"));
-
 	}
 
 }

@@ -32,3 +32,76 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Outputs
+bazel-*
+test-project-host-*
+dist/
+dist-schema/
+
+# IDEs
+jsconfig.json
+
+# Intellij IDEA/WebStorm
+.idea/
+!.idea/workspace.xml
+!.idea/tasks.xml
+!.idea/dictionaries
+!.idea/shelf
+
+# VSCode
+.vscode/
+
+# Typings file
+typings/
+
+# Misc
+coverage/
+node_modules/
+tmp/
+npm-debug.log*
+yarn-error.log*
+
+# Angular CLI
+.ng_pkg_build/
+.ng-dev.log
+.ng-dev.err*.log
+.ng-dev.user*
+.husky/_
+.bazelrc.user
+
+# Mac OSX Finder files
+**/.DS_Store
+.DS_Store
+
+### Angular ###
+## Angular ##
+# compiled output
+dist/
+tmp/
+app/**/*.js
+app/**/*.js.map
+
+# dependencies
+node_modules/
+bower_components/
+
+# IDEs and editors
+.idea/
+
+# misc
+.sass-cache/
+connect.lock/
+coverage/
+libpeerconnection.log/
+npm-debug.log
+testem.log
+typings/
+.angular/
+
+# e2e
+e2e/*.js
+e2e/*.map
+
+# System Files
+.DS_Store/

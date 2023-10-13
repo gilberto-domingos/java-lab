@@ -1,10 +1,10 @@
-package br.com.b1010code.apicollectordata;
+package br.com.domingos.collector;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApiCollectorDataApplicationTests {
+class JwtOauth2ApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,6 +1,11 @@
-# api-collector
+# API COLLECTOR
 
 Api que extrai informações de URLs web
 
 
-init - 12/10/23
+JWT - Jason Web Token
+
+ - Usuario, Login, Registro, Rastreamento de Rotas, Geração e Hash de Tokens.
+ 
+ 
+ init - 12/10/23

@@ -1,6 +1,7 @@
 package br.com.domingos.collector.service;
 
 import br.com.domingos.collector.entity.Accessed;
+import br.com.domingos.collector.exception.ObjectNotFoundException;
 import br.com.domingos.collector.repository.AccessedRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class AccessedServiceImp implements AccessedService{
+public class AccessedServiceImp implements AccessedService {
 
     private final AccessedRepository accessedRepository;
 
@@ -27,7 +28,13 @@ public class AccessedServiceImp implements AccessedService{
 
     @Override
     public Optional<Accessed> findByCnpj(String cnpj) {
-       return this.accessedRepository.findAllByCnpj(cnpj);
+        Optional<Accessed> accessed = this.accessedRepository.findAllByCnpj(cnpj);
+
+        if (!accessed.isPresent()) {
+            throw new ObjectNotFoundException("CNPJ não encontrado");
+        }
+
+        return accessed;
     }
 
 

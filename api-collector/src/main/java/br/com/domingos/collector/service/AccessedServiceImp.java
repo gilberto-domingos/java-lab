@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -25,8 +26,8 @@ public class AccessedServiceImp implements AccessedService{
     }
 
     @Override
-    public List<Accessed> findByCnpj(String cnpj) {
-        return null;
+    public Optional<Accessed> findByCnpj(String cnpj) {
+       return this.accessedRepository.findAllByCnpj(cnpj);
     }
 
 

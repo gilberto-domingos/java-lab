@@ -1,0 +1,15 @@
+<h2>Cliente :</h2>
+
+<p>Empresa:</p>
+<p>CNPJ:</p>
+
+<h2>Data e Horário que o cliente acessou o sistema :</h2>
+<p>{{ dateTimeFormated }}</p>
+
+<h2>Localização :</h2>
+<p>Cidade: {{ location?.city }}</p>
+<p>Estado: {{ location?.region }}</p>
+<p>País: {{ location?.country_name }}</p>
+<p>Latitude: {{ locationJs?.latitude }}</p>
+<p>Longitude: {{ locationJs?.longitude }}</p>
+<p>Endereço do IP: {{ location?.ip }}</p>

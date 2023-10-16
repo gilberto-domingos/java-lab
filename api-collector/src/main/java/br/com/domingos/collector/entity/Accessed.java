@@ -1,21 +1,19 @@
 package br.com.domingos.collector.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
+
+import java.time.LocalDateTime;
 
 
 @Table(name = "accesseds")
 @Entity(name = "accesseds")
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class Accessed {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column
     private String companyName;
@@ -39,5 +37,7 @@ public class Accessed {
     private String latitude;
     @Column
     private String longitude;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+    private LocalDateTime dateTime;
 
 }

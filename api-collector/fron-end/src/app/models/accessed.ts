@@ -5,6 +5,7 @@ export interface Accessed {
     address: string;
     numberr: string;
     cep: string;
+    country_name:string,
     city: string;
     state: string;
     login: string;

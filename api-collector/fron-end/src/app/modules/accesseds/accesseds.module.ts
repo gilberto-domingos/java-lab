@@ -4,11 +4,17 @@ import { CommonModule } from '@angular/common';
 import { AccessedsRoutingModule } from './accesseds-routing.module';
 
 
+
+
+
 @NgModule({
-  declarations: [],
+  declarations: [
+
+  ],
   imports: [
     CommonModule,
-    AccessedsRoutingModule
+    AccessedsRoutingModule,
+
   ]
 })
 export class AccessedsModule { }

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './shared/material/material.module';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './components/menu/menu.component';
 import { AccessedComponent } from './components/accessed/accessed.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 
@@ -23,10 +23,13 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
+    MaterialModule,
+    ReactiveFormsModule,
+
+
+
     HttpClientModule
 
   ],

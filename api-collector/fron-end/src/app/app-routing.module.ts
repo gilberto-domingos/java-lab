@@ -1,15 +1,13 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccessedComponent } from './components/accessed/accessed.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'accesseds' },
+  { path: '', pathMatch: 'full', redirectTo: 'accessed' },
 
-  {
-    path: 'accesseds',
-    loadChildren: () => import('./modules/accesseds/accesseds.module').then(m => m.AccessedsModule)
-  },
- 
+  { path: 'accessed', component: AccessedComponent },
+
 ];
 
 @NgModule({

@@ -17,7 +17,7 @@ export class AccessedComponent implements OnInit {
   dateTimeFormated: string = "";
 
   constructor(private CommonService: CommonService, private formBuilder: FormBuilder,
-    service: DataAccessedService) {
+    private dataAccessedService: DataAccessedService) {
 
     this.form = this.formBuilder.group({
       companyName: [null],
@@ -36,7 +36,7 @@ export class AccessedComponent implements OnInit {
     });
 
   }
-  //country_name
+
   ngOnInit() {
 
     this.dateTimeFormated = format(this.dateTime, "dd/MM/yyyy HH:mm:ss")
@@ -52,13 +52,12 @@ export class AccessedComponent implements OnInit {
       if (position && position.coords) {
         this.locationJs = position.coords;
 
-
         const cityControl = this.form?.get('city');
-        const regionControl = this.form?.get('region');        
+        const regionControl = this.form?.get('region');
         const country_nameControl = this.form?.get('country_name');
-        const latitudeControl = this.form?.get('latitude');   
-        const longitudeControl = this.form?.get('longitude');   
-        const ipControl = this.form?.get('ip');   
+        const latitudeControl = this.form?.get('latitude');
+        const longitudeControl = this.form?.get('longitude');
+        const ipControl = this.form?.get('ip');
 
         if (cityControl) {
           cityControl.setValue(this.location.city);
@@ -83,16 +82,15 @@ export class AccessedComponent implements OnInit {
         if (ipControl) {
           ipControl.setValue(this.location.ip);
         }
-        
+
       }
     });
-
-
-
-
   }
 
   onSubmit() {
+
+    this.dataAccessedService.save(this.form.value).subscribe(result => console.log(result));
+
     console.log('enviado', this.form.value);
 
   }

@@ -1,115 +1,93 @@
 <mat-card>
-  <mat-toolbar color="primary">Informações do Acessor</mat-toolbar>
-
-  <mat-card-content>
-    <form [formGroup]="form">
-      <mat-form-field class="full-width">
-        <mat-label>Empresa</mat-label>
-        <input matInput formControlName="companyName" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field class="full-width">
-        <mat-label>CNPJ</mat-label>
-        <input matInput formControlName="cnpj" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field class="full-width">
-        <mat-label>Endereço</mat-label>
-        <input matInput formControlName="address" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field class="full-width">
-        <mat-label>Numero</mat-label>
-        <input matInput formControlName="numberr" /> </mat-form-field
-      ><br />
-
-      <mat-form-field class="full-width">
-        <mat-label>CEP</mat-label>
-        <input matInput formControlName="cep" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field class="full-width">
-        <mat-label>Cidade</mat-label>
-        <input matInput formControlName="city" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field class="full-width">
-        <mat-label>Estado</mat-label>
-        <input matInput formControlName="state" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field class="full-width">
-        <mat-label>País</mat-label>
-        <input matInput formControlName="country_name" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field class="full-width">
-        <mat-label>Login do Acessor</mat-label>
-        <input matInput formControlName="login" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field class="full-width">
-        <mat-label>Endereço do IP</mat-label>
-        <input matInput formControlName="ip" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field class="full-width">
-        <mat-label>Latitude</mat-label>
-        <input matInput formControlName="latitude" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field class="full-width">
-        <mat-label>Longitude</mat-label>
-        <input matInput formControlName="longitude" />
-      </mat-form-field>
-      <br />
-
-      <mat-form-field class="full-width">
-        <mat-label>Data e hora do acesso</mat-label>
-        <input matInput formControlName="dateTime" />
-      </mat-form-field>
-      <br />
-    </form>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="onSubmit()">
-      Salvar
-    </button>
-    <button mat-raised-button color="warn" (click)="onCancel()">
-      Cancelar
-    </button>
-  </mat-card-actions>
-</mat-card>
-
-<mat-card>
-  <mat-toolbar color="primary">Informações do Acessor</mat-toolbar>
-
-  <mat-card-content>
-    <p>Empresa :</p>
-    <p>CNPJ :</p>
-
-    <h2>Data e Horário :</h2>
-    <p>{{ dateTimeFormated }}</p>
-
-    <h2>Localização :</h2>
-
-    <!--
-    <p>Cidade: {{ location.city }}</p>
-    <p>Estado: {{ location.region }}</p>
-<p>País: {{ location.country_name }}</p>
-<p>Latitude: {{ locationJs.latitude }}</p>
-    <p>Longitude: {{ locationJs.longitude }}</p>
-    <p>Endereço do IP: {{ location.ip }}</p>
-   -->
-  </mat-card-content>
-</mat-card>
+    <mat-toolbar color="primary">Informações do Acessor</mat-toolbar>
+  
+    <mat-card-content>
+      <form [formGroup]="form">
+        <mat-form-field class="full-width">
+          <mat-label>Empresa</mat-label>
+          <input matInput formControlName="companyName" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>CNPJ</mat-label>
+          <input matInput formControlName="cnpj" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>Endereço</mat-label>
+          <input matInput formControlName="address" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>Numero</mat-label>
+          <input matInput formControlName="numberr" /> </mat-form-field
+        ><br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>CEP</mat-label>
+          <input matInput formControlName="cep" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>Cidade</mat-label>
+          <input matInput formControlName="city" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>Estado</mat-label>
+          <input matInput formControlName="state" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>País</mat-label>
+          <input matInput formControlName="country_name" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>Login do Acessor</mat-label>
+          <input matInput formControlName="login" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>Endereço do IP</mat-label>
+          <input matInput formControlName="ip" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>Latitude</mat-label>
+          <input matInput formControlName="latitude" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>Longitude</mat-label>
+          <input matInput formControlName="longitude" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>Data e hora do acesso</mat-label>
+          <input matInput formControlName="dateTime" [(ngModel)]="dateTimeFormated" />
+        </mat-form-field>
+        <br />
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onSubmit()">
+        Salvar
+      </button>
+      <button mat-raised-button color="warn" (click)="onCancel()">
+        Cancelar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  

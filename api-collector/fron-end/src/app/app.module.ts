@@ -4,13 +4,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './shared/material/material.module';
 import { AppComponent } from './app.component';
 import { AccessedComponent } from './components/accessed/accessed.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './components/menu/menu.component';
-
+import { CommonService } from './services/common.service';
+import { DataAccessedService } from './services/data-accessed.service';
 
 
 
@@ -29,13 +31,10 @@ import { MenuComponent } from './components/menu/menu.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-
-
-
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [CommonService, DataAccessedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

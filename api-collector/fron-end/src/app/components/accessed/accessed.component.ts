@@ -21,7 +21,7 @@ export class AccessedComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       login: [null],
-      companyName: [null],
+      company_name: [null],
       cnpj: [null],      
       city: [null],
       region: [null],

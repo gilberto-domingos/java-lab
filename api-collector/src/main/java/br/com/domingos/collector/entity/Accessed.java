@@ -16,21 +16,17 @@ public class Accessed {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column
-    private String companyName;
+    private String login;
+    @Column
+    private String company_name;
     @Column
     private String cnpj;
     @Column
-    private String address;
-    @Column
-    private String numberr;
-    @Column
-    private String cep;
-    @Column
     private String city;
     @Column
-    private String state;
+    private String region;
     @Column
-    private String login;
+    private String country_name;
     @Column
     private String ip;
     @Column
@@ -39,5 +35,11 @@ public class Accessed {
     private String longitude;
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime dateTime;
+    @Column
+    private String network;
+    @Column(name = "versionn")
+    private String version;
+    @Column
+    private String org;
 
 }

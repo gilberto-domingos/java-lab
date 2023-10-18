@@ -1,7 +1,7 @@
 export interface Accessed {
     _id: number;
     login: string;
-    companyName: string;
+    company_name: string;
     cnpj: string;    
     city: string;
     region: string;

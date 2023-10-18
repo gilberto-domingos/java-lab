@@ -16,35 +16,72 @@ export class AccessedComponent implements OnInit {
   dateTime = new Date();
   dateTimeFormated: string = "";
 
-  constructor(private CommonService: CommonService, private formBuilder: FormBuilder,
+  constructor(private commonService: CommonService, private formBuilder: FormBuilder,
     private dataAccessedService: DataAccessedService) {
 
     this.form = this.formBuilder.group({
-      companyName: [null],
-      cnpj: [null],
-      address: [null],
-      numberr: [null],
-      cep: [null],
-      city: [null],
-      state: [null],
-      country_name: [null],
       login: [null],
-      ip: [null],
+      companyName: [null],
+      cnpj: [null],      
+      city: [null],
+      region: [null],
+      country_name: [null],     
+      ip: [null],      
       latitude: [null],
       longitude: [null],
-      dateTime: [null]
+      dateTime: [null],
+      network: [null],
+      version: [null],
+      org: [null]
     });
 
   }
 
-  ngOnInit() {
+  ngOnInit() {    
 
     this.dateTimeFormated = format(this.dateTime, "dd/MM/yyyy HH:mm:ss")
 
-
-    this.CommonService.getLocation().subscribe((response) => {
+    this.commonService.getLocation().subscribe((response) => {
       console.log(response);
       this.location = response;
+
+      const cityControl = this.form?.get('city');
+      const regionControl = this.form?.get('region');
+      const country_nameControl = this.form?.get('country_name');
+      const ipControl = this.form?.get('ip');
+      const networkControl = this.form?.get('network');
+      const versionControl = this.form?.get('version');
+      const orgControl = this.form?.get('org');
+
+      if (cityControl) {
+        cityControl.setValue(this.location.city);
+      }
+
+      if (regionControl) {
+        regionControl.setValue(this.location.region);
+      }
+
+      if (country_nameControl) {
+        country_nameControl.setValue(this.location.country_name);
+      }
+
+
+      if (ipControl) {
+        ipControl.setValue(this.location.ip);
+      }
+
+      if (networkControl) {
+        networkControl.setValue(this.location.network);
+      }
+
+      if (versionControl) {
+        versionControl.setValue(this.location.version);
+      }
+
+      if (orgControl) {
+        orgControl.setValue(this.location.org);
+      }
+
     })
 
     navigator.geolocation.getCurrentPosition((position) => {
@@ -52,24 +89,8 @@ export class AccessedComponent implements OnInit {
       if (position && position.coords) {
         this.locationJs = position.coords;
 
-        const cityControl = this.form?.get('city');
-        const regionControl = this.form?.get('region');
-        const country_nameControl = this.form?.get('country_name');
         const latitudeControl = this.form?.get('latitude');
         const longitudeControl = this.form?.get('longitude');
-        const ipControl = this.form?.get('ip');
-
-        if (cityControl) {
-          cityControl.setValue(this.location.city);
-        }
-
-        if (regionControl) {
-          regionControl.setValue(this.location.region);
-        }
-
-        if (country_nameControl) {
-          country_nameControl.setValue(this.location.country_name);
-        }
 
         if (latitudeControl) {
           latitudeControl.setValue(this.locationJs.latitude);
@@ -77,10 +98,6 @@ export class AccessedComponent implements OnInit {
 
         if (longitudeControl) {
           longitudeControl.setValue(this.locationJs.longitude);
-        }
-
-        if (ipControl) {
-          ipControl.setValue(this.location.ip);
         }
 
       }

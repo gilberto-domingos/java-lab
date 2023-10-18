@@ -1,16 +1,16 @@
 export interface Accessed {
     _id: number;
-    companyName: string;
-    cnpj: string;
-    address: string;
-    numberr: string;
-    cep: string;
-    country_name:string,
-    city: string;
-    state: string;
     login: string;
-    ip: string;
+    companyName: string;
+    cnpj: string;    
+    city: string;
+    region: string;
+    country_name:string,    
+    ip: string;    
     latitude: string;
     longitude: string;
     dateTime: dateFns;
+    network: string;
+    version: string;
+    org: string
 }

@@ -3,6 +3,13 @@
   
     <mat-card-content>
       <form [formGroup]="form">
+       
+        <mat-form-field class="full-width">
+          <mat-label>Login do Acessor</mat-label>
+          <input matInput formControlName="login" />
+        </mat-form-field>
+        <br />
+
         <mat-form-field class="full-width">
           <mat-label>Empresa</mat-label>
           <input matInput formControlName="companyName" />
@@ -13,24 +20,7 @@
           <mat-label>CNPJ</mat-label>
           <input matInput formControlName="cnpj" />
         </mat-form-field>
-        <br />
-  
-        <mat-form-field class="full-width">
-          <mat-label>Endereço</mat-label>
-          <input matInput formControlName="address" />
-        </mat-form-field>
-        <br />
-  
-        <mat-form-field class="full-width">
-          <mat-label>Numero</mat-label>
-          <input matInput formControlName="numberr" /> </mat-form-field
-        ><br />
-  
-        <mat-form-field class="full-width">
-          <mat-label>CEP</mat-label>
-          <input matInput formControlName="cep" />
-        </mat-form-field>
-        <br />
+        <br />        
   
         <mat-form-field class="full-width">
           <mat-label>Cidade</mat-label>
@@ -40,7 +30,7 @@
   
         <mat-form-field class="full-width">
           <mat-label>Estado</mat-label>
-          <input matInput formControlName="state" />
+          <input matInput formControlName="region" />
         </mat-form-field>
         <br />
   
@@ -48,19 +38,13 @@
           <mat-label>País</mat-label>
           <input matInput formControlName="country_name" />
         </mat-form-field>
-        <br />
-  
-        <mat-form-field class="full-width">
-          <mat-label>Login do Acessor</mat-label>
-          <input matInput formControlName="login" />
-        </mat-form-field>
-        <br />
+        <br />        
   
         <mat-form-field class="full-width">
           <mat-label>Endereço do IP</mat-label>
           <input matInput formControlName="ip" />
         </mat-form-field>
-        <br />
+        <br />        
   
         <mat-form-field class="full-width">
           <mat-label>Latitude</mat-label>
@@ -79,6 +63,23 @@
           <input matInput formControlName="dateTime" [(ngModel)]="dateTimeFormated" />
         </mat-form-field>
         <br />
+
+        <mat-form-field class="full-width">
+          <mat-label>Network</mat-label>  
+          <input matInput formControlName="network" />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="full-width">
+          <mat-label>Version</mat-label>
+          <input matInput formControlName="version" />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="full-width">
+          <mat-label>Empresa da Internet</mat-label>
+          <input matInput formControlName="org" />
+        </mat-form-field>        
       </form>
     </mat-card-content>
     <mat-card-actions>

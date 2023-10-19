@@ -1,22 +1,38 @@
+<p>
+  <mat-toolbar color="primary">
+    <span>Computer Systems</span>
+  </mat-toolbar>
+</p>
 <mat-card>
-  <mat-toolbar color="primary" class="mat-toolbar-custom">Login</mat-toolbar>
-
+  <mat-toolbar color="warn" class="mat-toolbar-log">Login</mat-toolbar>
   <mat-card-content>
     <form [formGroup]="form">
       <mat-form-field class="full-width">
         <mat-label>Username</mat-label>
-        <input matInput formControlName="username" />
+        <input
+          matInput
+          [(ngModel)]="user.login"
+          type="text"
+          formControlName="username"
+        />
       </mat-form-field>
       <br />
-
       <mat-form-field class="full-width">
         <mat-label>Password</mat-label>
-        <input matInput formControlName="password" />
+        <input
+          matInput
+          [(ngModel)]="user.password"
+          type="password"
+          formControlName="password"
+        />
       </mat-form-field>
       <br />
     </form>
   </mat-card-content>
   <mat-card-actions>
-     <button mat-raised-button color="primary" (click)="onSubmit()">Login</button>     
+    <button mat-raised-button color="warn" (click)="onSubmit()">Login</button>
   </mat-card-actions>
+  <mat-toolbar color="primary" class="mat-toolbar-reg">
+    <button mat-raised-button (click)="register()">Cadastrar-se</button>
+  </mat-toolbar>
 </mat-card>

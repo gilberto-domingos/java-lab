@@ -1,10 +1,12 @@
-import { DataAccessedService } from './../../services/data-accessed.service';
-import { CommonService } from './../../services/common.service';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { DataAccessedService } from 'src/app/services/data-accessed.service';
+import { User } from 'src/app/models/user';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Location } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -14,59 +16,48 @@ import { catchError, tap } from 'rxjs/operators';
 })
 export class LoginComponent {
 
-  itemToSave: any = {}; 
+  public user: User = new User();
+  itemToSave: any = {};
   form: FormGroup;
-  
 
-  constructor(private commonService: CommonService,
+  constructor(
     private formBuilder: FormBuilder,
+    private authService: AuthService,
     private dataAccessedService: DataAccessedService,
+    private router: Router,
     private snackBar: MatSnackBar,
-    private locationll: Location) {
+  ) {
 
     this.form = this.formBuilder.group({
       username: [null],
-      password: [null]      
+      password: [null]
     });
 
   }
 
-  ngOnInit() {}
-
-
-  salvarItem(item: any): void {
-    this.dataAccessedService.createItem(item)
-      .pipe(
-        tap((data: any) => {
-          this.onSuccess();
-        }),
-        catchError((error: any) => {
-          this.onError();
-          throw error;
-        })
-      )
-      .subscribe();
+  ngOnInit() {
+    this.authService.showMenuEmmitter.emit(false);
   }
 
 
   onSubmit() {
-    if (this.form.valid) {
-      const formData = this.form.value; 
-
-      this.salvarItem(formData);
-    }
+    this.authService.onSubmit(this.user);
   }
 
   onCancel() {
-    this.locationll.back();
+
   }
 
   private onSuccess() {
-    this.snackBar.open("Salvo com sucesso !",'', { duration: 3000 });
+    this.snackBar.open("Salvo com sucesso !", '', { duration: 3000 });
   }
 
-  private onError(){
-    this.snackBar.open("Erro ao salvar.",'', {duration: 5000 });
+  private onError() {
+    this.snackBar.open("Erro ao salvar.", '', { duration: 5000 });
+  }
+
+  register() {
+    this.router.navigate(['/register'])
   }
 
 }

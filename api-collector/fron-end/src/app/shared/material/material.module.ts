@@ -7,7 +7,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 
@@ -21,8 +23,10 @@ import { MatTableModule} from '@angular/material/table';
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,
-    MatSnackBarModule,   
-    MatTableModule
+    MatSnackBarModule,
+    MatTableModule,
+    MatSidenavModule,
+    MatMenuModule
   ],
 
 })

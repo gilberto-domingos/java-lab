@@ -15,7 +15,9 @@ import { CommonService } from './services/common.service';
 import { DataAccessedService } from './services/data-accessed.service';
 import { ListAccessedComponent } from './components/list-accessed/list-accessed.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { AuthService } from './services/auth.service';
+import { RegisterComponent } from './components/register/register.component';
+import { RegisterService } from './services/register.service';
 
 
 
@@ -26,7 +28,8 @@ import { LoginComponent } from './components/login/login.component';
     MenuComponent,
     AccessedComponent,
     ListAccessedComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,7 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule
 
   ],
-  providers: [CommonService, DataAccessedService],
+  providers: [CommonService, DataAccessedService, AuthService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -23,3 +23,23 @@ td{
   align-items: center;
   text-shadow: 1px 1px 1px black;
 }
+
+.user-login-container {
+  position: absolute;
+  top: 15px;
+  right: 10px; 
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.material-icons {
+  font-size: 30px;
+  margin-right: 10px; 
+  color: white; 
+}
+
+h2 {
+  margin: 0;
+  padding-right: 30px;
+}

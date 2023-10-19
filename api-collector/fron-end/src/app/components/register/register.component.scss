@@ -1,7 +1,6 @@
 mat-card{
-    max-width: 70%;
+    max-width: 95%;
     margin: 2em auto;   
-    margin-top: 100px;    
 }
 
 .full-width{
@@ -17,18 +16,9 @@ button{
     margin-right: 10px;
 }
 
-.mat-toolbar-log {
+.mat-toolbar-custom {
     display: flex;
     justify-content: center;
     align-items: center;
     text-shadow: 1px 1px 1px black;
   }
-
-  .mat-toolbar-reg {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    text-shadow: 1px 1px 1px black;
-    padding-right: 8%;
-  }
-

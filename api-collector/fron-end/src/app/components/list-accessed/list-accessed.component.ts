@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { DataAccessedService } from 'src/app/services/data-accessed.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Accessed } from 'src/app/models/accessed';
 
@@ -10,9 +12,10 @@ import { Accessed } from 'src/app/models/accessed';
   templateUrl: './list-accessed.component.html',
   styleUrls: ['./list-accessed.component.scss']
 })
-export class ListAccessedComponent implements OnInit {
+export class ListAccessedComponent implements OnInit {  
 
   accesseds: any[] = [];
+  userLogin: string = '';
 
   displayedColumns: string[] = ['id', 'login', 'company_name', 'cnpj', 'city', 'region',
     'country_name', 'ip', 'latitude', 'longitude', 'dateTime', 'network', 'version', 'org'];
@@ -20,14 +23,25 @@ export class ListAccessedComponent implements OnInit {
 
   
 
-  constructor(private dataService: DataAccessedService) { }
+  constructor(private dataService: DataAccessedService, private authService: AuthService,
+    private router: Router) {
+    this.userLogin = authService.getUserLogin();
+   }
 
   ngOnInit(): void {
+
+    this.authService.showMenuEmmitter.emit(true);
+
+    this.userLogin = this.authService.getUserLogin();   
+
     this.dataService.getAllItems().subscribe((data: any) => {
-      this.accesseds = data;
-      console.log('Itens recuperados do serviço:', this.accesseds);
+      this.accesseds = data;     
     });
 
+  }
+
+  logout(){
+    this.router.navigate(["/"])
   }
 
 }

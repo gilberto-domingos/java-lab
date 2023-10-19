@@ -1,4 +1,3 @@
-import { Accessed } from './../../models/accessed';
 import { DataAccessedService } from './../../services/data-accessed.service';
 import { CommonService } from './../../services/common.service';
 import { Component, OnInit } from '@angular/core';

@@ -14,6 +14,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { CommonService } from './services/common.service';
 import { DataAccessedService } from './services/data-accessed.service';
 import { ListAccessedComponent } from './components/list-accessed/list-accessed.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -24,7 +25,8 @@ import { ListAccessedComponent } from './components/list-accessed/list-accessed.
     AppComponent,
     MenuComponent,
     AccessedComponent,
-    ListAccessedComponent
+    ListAccessedComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

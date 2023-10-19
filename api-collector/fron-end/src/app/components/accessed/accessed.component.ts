@@ -149,4 +149,8 @@ export class AccessedComponent implements OnInit {
     this.snackBar.open("Erro ao salvar.",'', {duration: 5000 });
   }
 
+  ngAfterViewInit() {
+   // this.onSubmit(); 
+  }
+
 }

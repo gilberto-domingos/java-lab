@@ -1,27 +1,38 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Accessed } from '../models/accessed';
-import { first, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataAccessedService {
 
-  private readonly API = 'api/accesseds'
+  private baseUrl = 'http://localhost:8080'; 
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  list(){
-    return this.httpClient.get<Accessed[]>(this.API)
-    .pipe(
-      first(),
-      tap(accesseds => console.log(accesseds))
-    );
+  getAllItems() {
+    return this.http.get(`${this.baseUrl}/api`);
   }
 
-  save(record: Accessed){
-    return this.httpClient.post<Accessed>(this.API, record).pipe(first());
+  getItemById(id: number) {
+    return this.http.get(`${this.baseUrl}/api/${id}`);
+  }
+
+  createItem(item: any) {
+    return this.http.post(`${this.baseUrl}/api`, item);
+  }
+
+  updateItem(id: number, item: any) {
+    return this.http.put(`${this.baseUrl}/api/${id}`, item);
+  }
+
+  deleteItem(id: number) {
+    return this.http.delete(`${this.baseUrl}/api/${id}`);
+  }
+
+  create(data: any): Observable<any> {
+    return this.http.post(this.baseUrl, data);
   }
 
 }

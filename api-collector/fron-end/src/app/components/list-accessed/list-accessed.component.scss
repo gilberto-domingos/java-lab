@@ -1,0 +1,25 @@
+.example-container {
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;  
+}
+
+table {
+  width: 170%;   
+}
+
+th{
+    text-align: center;   
+}
+
+td{
+  text-align: center;  
+}
+
+.mat-toolbar-custom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1px 1px 1px black;
+}

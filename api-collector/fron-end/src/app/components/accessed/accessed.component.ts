@@ -1,8 +1,12 @@
+import { Accessed } from './../../models/accessed';
 import { DataAccessedService } from './../../services/data-accessed.service';
 import { CommonService } from './../../services/common.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Location } from '@angular/common';
 import { format } from 'date-fns';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { catchError, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-accessed',
@@ -10,26 +14,31 @@ import { format } from 'date-fns';
   styleUrls: ['./accessed.component.scss']
 })
 export class AccessedComponent implements OnInit {
+
+  itemToSave: any = {}; 
   form: FormGroup;
   location: any;
   locationJs: any = { latitude: null, city: null, region: null, country_name: null, longitude: null, ip: null };
   dateTime = new Date();
   dateTimeFormated: string = "";
 
-  constructor(private commonService: CommonService, private formBuilder: FormBuilder,
-    private dataAccessedService: DataAccessedService) {
+  constructor(private commonService: CommonService,
+    private formBuilder: FormBuilder,
+    private dataAccessedService: DataAccessedService,
+    private snackBar: MatSnackBar,
+    private locationll: Location) {
 
     this.form = this.formBuilder.group({
       login: [null],
       company_name: [null],
-      cnpj: [null],      
+      cnpj: [null],
       city: [null],
       region: [null],
-      country_name: [null],     
-      ip: [null],      
+      country_name: [null],
+      ip: [null],
       latitude: [null],
       longitude: [null],
-      dateTime: [null],
+      dateTime: [this.itemToSave.dateTimeFormated],
       network: [null],
       version: [null],
       org: [null]
@@ -37,7 +46,7 @@ export class AccessedComponent implements OnInit {
 
   }
 
-  ngOnInit() {    
+  ngOnInit() {
 
     this.dateTimeFormated = format(this.dateTime, "dd/MM/yyyy HH:mm:ss")
 
@@ -104,16 +113,40 @@ export class AccessedComponent implements OnInit {
     });
   }
 
+
+  salvarItem(item: any): void {
+    this.dataAccessedService.createItem(item)
+      .pipe(
+        tap((data: any) => {
+          this.onSuccess();
+        }),
+        catchError((error: any) => {
+          this.onError();
+          throw error;
+        })
+      )
+      .subscribe();
+  }
+
+
   onSubmit() {
+    if (this.form.valid) {
+      const formData = this.form.value; 
 
-    this.dataAccessedService.save(this.form.value).subscribe(result => console.log(result));
-
-    console.log('enviado', this.form.value);
-
+      this.salvarItem(formData);
+    }
   }
 
   onCancel() {
+    this.locationll.back();
+  }
 
+  private onSuccess() {
+    this.snackBar.open("Salvo com sucesso !",'', { duration: 3000 });
+  }
+
+  private onError(){
+    this.snackBar.open("Erro ao salvar.",'', {duration: 5000 });
   }
 
 }

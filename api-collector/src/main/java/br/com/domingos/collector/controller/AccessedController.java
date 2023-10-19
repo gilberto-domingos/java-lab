@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/accesseds")
+@RequestMapping("/api")
 public class AccessedController {
 
     private final AccessedService accessedService;

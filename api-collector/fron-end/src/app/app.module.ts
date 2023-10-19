@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './components/menu/menu.component';
 import { CommonService } from './services/common.service';
 import { DataAccessedService } from './services/data-accessed.service';
+import { ListAccessedComponent } from './components/list-accessed/list-accessed.component';
 
 
 
@@ -22,7 +23,8 @@ import { DataAccessedService } from './services/data-accessed.service';
   declarations: [
     AppComponent,
     MenuComponent,
-    AccessedComponent
+    AccessedComponent,
+    ListAccessedComponent
   ],
   imports: [
     BrowserModule,

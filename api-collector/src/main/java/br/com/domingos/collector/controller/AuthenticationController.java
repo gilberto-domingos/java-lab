@@ -6,6 +6,7 @@ import br.com.domingos.collector.dto.RegisterDTO;
 import br.com.domingos.collector.entity.User;
 import br.com.domingos.collector.infra.security.TokenService;
 import br.com.domingos.collector.repository.UserRepository;
+import br.com.domingos.collector.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +23,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthenticationController {
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
     private AuthenticationManager authenticationManager;
 
     @Autowired
@@ -35,11 +39,39 @@ public class AuthenticationController {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
-        var token  = tokenService.generateToken((User) auth.getPrincipal());
+        var token = tokenService.generateToken((User) auth.getPrincipal());
 
         return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
+    @PostMapping("/register")
+    public ResponseEntity register(@RequestBody @Valid RegisterDTO data) {
+
+        if (this.userRepository.findByLogin(data.login()) != null) return ResponseEntity.badRequest().build();
+
+        String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
+        User newUser = new User(
+                data.login(),
+                encryptedPassword,
+                data.role(),
+                data.name(),
+                data.cnpj(),
+                data.address(),
+                data.num(),
+                data.neighborhood(),
+                data.cep(),
+                data.city(),
+                data.region(),
+                data.dateTime()
+        );
+
+
+        this.userRepository.save(newUser);
+
+        return ResponseEntity.ok().build();
+    }
+
+    /*
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody @Valid RegisterDTO data){
         if(this.userRepository.findByLogin(data.login()) != null) return ResponseEntity.badRequest().build();
@@ -50,5 +82,5 @@ public class AuthenticationController {
         this.userRepository.save(newUser);
 
         return ResponseEntity.ok().build();
-    }
+    } */
 }

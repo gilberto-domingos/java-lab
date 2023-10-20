@@ -8,14 +8,10 @@ export interface Register {
     name: string;
     cnpj: string;     
     address: string; 
-    cep: string; 
+    num: string;
+    neighborhood: string; 
+    cep: string;   
     city: string;
-    state: string;
+    region: string;
     dateTime: dateFns;    
 }
-
-
-
-    
-   
-   

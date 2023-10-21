@@ -5,6 +5,7 @@ import { AccessedComponent } from './components/accessed/accessed.component';
 import { ListAccessedComponent } from './components/list-accessed/list-accessed.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -15,7 +16,9 @@ const routes: Routes = [
 
   { path: 'list-accessed', component: ListAccessedComponent },
 
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+
+  { path: 'toolbar', component: ToolbarComponent }
 
 ];
 

@@ -18,6 +18,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
 import { RegisterComponent } from './components/register/register.component';
 import { RegisterService } from './services/register.service';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 
 
@@ -29,7 +30,8 @@ import { RegisterService } from './services/register.service';
     AccessedComponent,
     ListAccessedComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

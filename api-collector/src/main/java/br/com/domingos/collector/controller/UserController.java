@@ -29,4 +29,10 @@ public class UserController {
                 .map(user -> ResponseEntity.ok(user)).orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping(params = "login")
+    public ResponseEntity<User> getByLogin(@RequestParam("login") String login) {
+        return this.userService.findOptionalByLogin(login)
+                .map(emailacc -> ResponseEntity.ok(emailacc)).orElse(ResponseEntity.notFound().build());
+    }
+
 }

@@ -13,12 +13,13 @@ import { Accessed } from 'src/app/models/accessed';
   styleUrls: ['./list-accessed.component.scss']
 })
 export class ListAccessedComponent implements OnInit {  
-
+  
   accesseds: any[] = [];
   userLogin: string = '';
 
-  displayedColumns: string[] = ['id', 'login', 'company_name', 'cnpj', 'city', 'region',
-    'country_name', 'ip', 'latitude', 'longitude', 'dateTime', 'network', 'version', 'org'];
+
+  displayedColumns: string[] = ['id', 'company_name', 'cnpj', 'ip', 'latitude', 'longitude', 'dateTime',
+  'city', 'region', 'country_name', 'login', 'network', 'version', 'org'];
   dataSource = new MatTableDataSource<Accessed>([]);
 
   
@@ -42,7 +43,7 @@ export class ListAccessedComponent implements OnInit {
 
   logout(){
     this.router.navigate(["/"])
-  }
+  }  
 
 }
 

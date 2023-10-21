@@ -34,4 +34,17 @@ public class UserServiceImp implements UserService{
 
         return accessed;
     }
+
+    @Override
+    public Optional<User> findOptionalByLogin(String login) {
+        Optional<User> emailacc = this.userRepository.findOptionalByLogin(login);
+
+        if (!emailacc.isPresent()) {
+            throw new ObjectNotFoundException("Email não encontrado");
+        }
+
+        return emailacc;
+    }
+
+
 }

@@ -7,6 +7,7 @@ import { format } from 'date-fns';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, tap } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accessed',
@@ -28,6 +29,7 @@ export class AccessedComponent implements OnInit {
 
 
   constructor(private cd: ChangeDetectorRef, private commonService: CommonService,
+    private route: Router,
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private dataAccessedService: DataAccessedService,
@@ -157,10 +159,9 @@ export class AccessedComponent implements OnInit {
     this.snackBar.open("Erro ao salvar.", '', { duration: 5000 });
   }
 
-  ngAfterViewInit() {
-    
+  ngAfterViewInit() {    
       this.onSubmit();
-    
+      this.route.navigate(['/list-accessed']) 
   }
 
 }

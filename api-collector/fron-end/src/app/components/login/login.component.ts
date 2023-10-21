@@ -16,12 +16,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  
+  hide = true;
   public user: User = new User();
   itemToSave: any = {};
   form: FormGroup;
   email: string = '';
-data: any;
+  data: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -41,37 +41,37 @@ data: any;
   ngOnInit() {
     this.authService.showMenuEmmitter.emit(false);
 
-    const login = 'domingoshot@hotmail.com'; 
+    const login = 'domingoshot@hotmail.com';
     this.getItemByLogin(login);
   }
 
-  
 
-    /*  getItemByLogin(login: string) {
-        this.authService.getItemByLogin(login)
-          .subscribe((data: any) => {
-            if (data.length > 0) { 
-              const email = data[0].login;
-              console.log("Email:", email);
-            } else {
-              console.log("Nenhum dado encontrado.");
-            }
-          });
-      } */
 
-      getItemByLogin(login: string) {
-        this.authService.getItemByLogin(login)
-          .subscribe((data: any) => {  
-            if (data.length > 0) { 
-              const email = data[0].login;
-              console.log("Email:", email);
-              console.log("Todos os dados", data)
-            } else {
-              console.log("Nenhum dado encontrado.");
-            }      
-           
-               
-          });
+  /*  getItemByLogin(login: string) {
+      this.authService.getItemByLogin(login)
+        .subscribe((data: any) => {
+          if (data.length > 0) { 
+            const email = data[0].login;
+            console.log("Email:", email);
+          } else {
+            console.log("Nenhum dado encontrado.");
+          }
+        });
+    } */
+
+  getItemByLogin(login: string) {
+    this.authService.getItemByLogin(login)
+      .subscribe((data: any) => {
+        if (data.length > 0) {
+          const email = data[0].login;
+          console.log("Email:", email);
+          console.log("Todos os dados", data)
+        } else {
+          console.log("Nenhum dado encontrado.");
+        }
+
+
+      });
 
 
   }

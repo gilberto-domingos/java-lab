@@ -10,4 +10,6 @@ public interface UserService {
     List<User> findAll(User user);
 
     Optional<User> findByCnpj(String cnpj);
+
+    Optional<User> findOptionalByLogin(String login);
 }

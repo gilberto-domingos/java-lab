@@ -29,10 +29,6 @@ export class DataAccessedService {
 
   deleteItem(id: number) {
     return this.http.delete(`${this.baseUrl}/api/${id}`);
-  }
-
-  create(data: any): Observable<any> {
-    return this.http.post(this.baseUrl, data);
-  }
+  }  
 
 }

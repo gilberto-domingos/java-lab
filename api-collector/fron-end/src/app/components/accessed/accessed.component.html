@@ -6,55 +6,55 @@
        
         <mat-form-field class="full-width">
           <mat-label>Login do Acessor</mat-label>
-          <input matInput formControlName="login" />
+          <input matInput formControlName="login" [(ngModel)]="emailb" />
         </mat-form-field>
         <br />
 
         <mat-form-field class="full-width">
           <mat-label>Empresa</mat-label>
-          <input matInput formControlName="company_name" />
+          <input matInput formControlName="company_name" [(ngModel)]="emp"/>
         </mat-form-field>
         <br />
   
         <mat-form-field class="full-width">
           <mat-label>CNPJ</mat-label>
-          <input matInput formControlName="cnpj" />
+          <input matInput formControlName="cnpj" [(ngModel)]="cnn" />
         </mat-form-field>
         <br />        
   
         <mat-form-field class="full-width">
           <mat-label>Cidade</mat-label>
-          <input matInput formControlName="city" />
+          <input matInput formControlName="city" [(ngModel)]="location.city" />
         </mat-form-field>
         <br />
   
         <mat-form-field class="full-width">
           <mat-label>Estado</mat-label>
-          <input matInput formControlName="region" />
+          <input matInput formControlName="region" [(ngModel)]="location.region" />
         </mat-form-field>
         <br />
   
         <mat-form-field class="full-width">
           <mat-label>País</mat-label>
-          <input matInput formControlName="country_name" />
+          <input matInput formControlName="country_name" [(ngModel)]="location.country_name" />
         </mat-form-field>
         <br />        
   
         <mat-form-field class="full-width">
           <mat-label>Endereço do IP</mat-label>
-          <input matInput formControlName="ip" />
+          <input matInput formControlName="ip" [(ngModel)]="location.ip"/>
         </mat-form-field>
         <br />        
   
         <mat-form-field class="full-width">
           <mat-label>Latitude</mat-label>
-          <input matInput formControlName="latitude" />
+          <input matInput formControlName="latitude" [(ngModel)]="locationJs.latitude" />
         </mat-form-field>
         <br />
   
         <mat-form-field class="full-width">
           <mat-label>Longitude</mat-label>
-          <input matInput formControlName="longitude" />
+          <input matInput formControlName="longitude" [(ngModel)]="locationJs.longitude"/>
         </mat-form-field>
         <br />
   
@@ -66,19 +66,19 @@
 
         <mat-form-field class="full-width">
           <mat-label>Network</mat-label>  
-          <input matInput formControlName="network" />
+          <input matInput formControlName="network" [(ngModel)]="location.network" />
         </mat-form-field>
         <br />
 
         <mat-form-field class="full-width">
           <mat-label>Version</mat-label>
-          <input matInput formControlName="version" />
+          <input matInput formControlName="version" [(ngModel)]="location.version" />
         </mat-form-field>
         <br />
 
         <mat-form-field class="full-width">
           <mat-label>Empresa da Internet</mat-label>
-          <input matInput formControlName="org" />
+          <input matInput formControlName="org" [(ngModel)]="location.org" />
         </mat-form-field>        
       </form>
     </mat-card-content>

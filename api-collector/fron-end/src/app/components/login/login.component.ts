@@ -14,11 +14,14 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
+  
   public user: User = new User();
   itemToSave: any = {};
   form: FormGroup;
+  email: string = '';
+data: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -37,6 +40,40 @@ export class LoginComponent {
 
   ngOnInit() {
     this.authService.showMenuEmmitter.emit(false);
+
+    const login = 'domingoshot@hotmail.com'; 
+    this.getItemByLogin(login);
+  }
+
+  
+
+    /*  getItemByLogin(login: string) {
+        this.authService.getItemByLogin(login)
+          .subscribe((data: any) => {
+            if (data.length > 0) { 
+              const email = data[0].login;
+              console.log("Email:", email);
+            } else {
+              console.log("Nenhum dado encontrado.");
+            }
+          });
+      } */
+
+      getItemByLogin(login: string) {
+        this.authService.getItemByLogin(login)
+          .subscribe((data: any) => {  
+            if (data.length > 0) { 
+              const email = data[0].login;
+              console.log("Email:", email);
+              console.log("Todos os dados", data)
+            } else {
+              console.log("Nenhum dado encontrado.");
+            }      
+           
+               
+          });
+
+
   }
 
 

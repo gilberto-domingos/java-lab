@@ -1,11 +1,12 @@
 import { DataAccessedService } from './../../services/data-accessed.service';
 import { CommonService } from './../../services/common.service';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
 import { format } from 'date-fns';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, tap } from 'rxjs/operators';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-accessed',
@@ -14,14 +15,20 @@ import { catchError, tap } from 'rxjs/operators';
 })
 export class AccessedComponent implements OnInit {
 
-  itemToSave: any = {}; 
+  itemToSave: any = {};
   form: FormGroup;
   location: any;
   locationJs: any = { latitude: null, city: null, region: null, country_name: null, longitude: null, ip: null };
   dateTime = new Date();
-  dateTimeFormated: string = "";
+  dateTimeFormated: string = '';
+  emailb: string = 'domingoshot@hotmail.com';
+  emp: string = 'Quimisa Industria SA';
+  cnn: string = '12.345.678/0001-23';
 
-  constructor(private commonService: CommonService,
+
+
+  constructor(private cd: ChangeDetectorRef, private commonService: CommonService,
+    private authService: AuthService,
     private formBuilder: FormBuilder,
     private dataAccessedService: DataAccessedService,
     private snackBar: MatSnackBar,
@@ -46,6 +53,8 @@ export class AccessedComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.authService.showMenuEmmitter.emit(true);
 
     this.dateTimeFormated = format(this.dateTime, "dd/MM/yyyy HH:mm:ss")
 
@@ -130,7 +139,7 @@ export class AccessedComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      const formData = this.form.value; 
+      const formData = this.form.value;
 
       this.salvarItem(formData);
     }
@@ -141,15 +150,17 @@ export class AccessedComponent implements OnInit {
   }
 
   private onSuccess() {
-    this.snackBar.open("Salvo com sucesso !",'', { duration: 3000 });
+    this.snackBar.open("Salvo com sucesso !", '', { duration: 3000 });
   }
 
-  private onError(){
-    this.snackBar.open("Erro ao salvar.",'', {duration: 5000 });
+  private onError() {
+    this.snackBar.open("Erro ao salvar.", '', { duration: 5000 });
   }
 
   ngAfterViewInit() {
-   // this.onSubmit(); 
+    
+      this.onSubmit();
+    
   }
 
 }

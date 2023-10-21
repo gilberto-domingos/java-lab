@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
 
@@ -7,15 +8,17 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
+  private baseUrl = 'http://localhost:8080';
+
   private userAuthenticaded: boolean = false;
   private getUser: string = '';
   public showMenuEmmitter = new EventEmitter<boolean>();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private http: HttpClient) { }
 
   onSubmit(user: User) {
 
-    if (user.login === 'Francisco Clenilson' && user.password === '222222') {
+    if (user.login === 'domingoshot@hotmail.com') {
 
       this.userAuthenticaded = true;
 
@@ -23,7 +26,7 @@ export class AuthService {
 
       this.getUser = user.login;
 
-      this.router.navigate(['/list-accessed'])
+      this.router.navigate(['/accessed'])
 
     } else {
       this.userAuthenticaded = false;
@@ -34,6 +37,10 @@ export class AuthService {
 
   getUserLogin(): string {
     return this.getUser;
+  }
+
+  getItemByLogin(login: string) {
+    return this.http.get(`${this.baseUrl}/api/users?email=${login}`); 
   }
 
 }

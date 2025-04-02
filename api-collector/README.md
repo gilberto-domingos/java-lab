@@ -1,4 +1,5 @@
 # API COLLECTOR
+com java 
 
 Api que extrai informações de URLs web
 
@@ -10,4 +11,4 @@ JWT - Jason Web Token
  
  
  
- init - 12/10/23
+

@@ -30,6 +30,6 @@
 => &nbsp;&nbsp; \* voting-system <br>
 => &nbsp;&nbsp; \* workwers-microservices <br>
 
-### Study
+- ### Study
 
 Estudo, relembrando, diário, rascunho, experimento, diversos... ... ...Methods, Functions, Parameters, Interfaces, Functional Interface, Lambda, Streams, Filters, Date Time, Optional, reduce, Threads, Runnable Interface, multiples Threads JOIN, MethodReference ,Lombok, Model Mapper, entity to DTO conversion, query spring Data JPQL, query Pageable... ... etc...

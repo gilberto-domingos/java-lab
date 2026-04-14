@@ -2,7 +2,7 @@
 
 ---
 
-- ### Projetos nesse repositório :
+- ### Projetos de estudos nesse repositório :
 
 => &nbsp;&nbsp; \* S.O.L.I.D <br>
 => &nbsp;&nbsp; \* api-collector <br>

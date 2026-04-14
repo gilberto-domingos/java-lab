@@ -1,0 +1,2 @@
+module FachoryMethod {
+}

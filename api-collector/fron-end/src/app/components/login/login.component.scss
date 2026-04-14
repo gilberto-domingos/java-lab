@@ -1,0 +1,34 @@
+mat-card{
+    max-width: 70%;
+    margin: 2em auto;   
+    margin-top: 100px;    
+}
+
+.full-width{
+    width: 100%;
+}
+
+.min-width{
+    width: 100%;
+    min-width: 150px;
+}
+
+button{
+    margin-right: 10px;
+}
+
+.mat-toolbar-log {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  .mat-toolbar-reg {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    text-shadow: 1px 1px 1px black;
+    padding-right: 8%;
+  }
+

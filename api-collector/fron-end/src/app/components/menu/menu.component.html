@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="'/'">
+      <mat-icon>dialpad</mat-icon>
+      <span>Home</span>
+    </button>
+    <button mat-menu-item [routerLink]="'/list-accessed'">
+      <mat-icon>dialpad</mat-icon>
+      <span>Acessados</span>
+    </button>    
+    <button mat-menu-item [routerLink]="'/register'">
+      <mat-icon>dialpad</mat-icon>
+      <span>Cadastrar-se</span>
+    </button>
+   
+  </mat-menu>
+</mat-toolbar>

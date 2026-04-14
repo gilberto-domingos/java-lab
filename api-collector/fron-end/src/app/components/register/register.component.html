@@ -1,0 +1,93 @@
+<app-toolbar></app-toolbar>
+<mat-card>
+    <mat-toolbar  class="mat-toolbar-custom" color="primary">Cadastrar-se</mat-toolbar>
+  
+    <mat-card-content>
+      <form [formGroup]="form">
+       
+        <mat-form-field class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="login" />
+        </mat-form-field>
+        <br />
+        
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" >
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Role</mat-label>
+          <input matInput type="text" formControlName="role" [(ngModel)]="roleUser" readonly />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="full-width">
+          <mat-label>Empresa</mat-label>
+          <input matInput type="text" formControlName="name" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>CNPJ ou CPF</mat-label>
+          <input matInput type="text" formControlName="cnpj" />
+        </mat-form-field>
+        <br />       
+        
+        <mat-form-field class="full-width">
+          <mat-label>Endereço</mat-label>
+          <input matInput type="text" formControlName="address" />
+        </mat-form-field>
+        <br /> 
+
+        <mat-form-field class="full-width">
+          <mat-label>Numero</mat-label>
+          <input matInput type="number" formControlName="num" />
+        </mat-form-field>
+        <br /> 
+
+        <mat-form-field class="full-width">
+          <mat-label>Bairro</mat-label>
+          <input matInput type="text" formControlName="neighborhood" />
+        </mat-form-field>
+        <br /> 
+
+        <mat-form-field class="full-width">
+          <mat-label>CEP</mat-label>
+          <input matInput type="text" formControlName="cep" />
+        </mat-form-field>
+        <br />       
+
+        <mat-form-field class="full-width">
+          <mat-label>Cidade</mat-label>
+          <input matInput type="text" formControlName="city" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="full-width">
+          <mat-label>Estado</mat-label>
+          <input matInput type="text" formControlName="region" />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="full-width">
+          <mat-label>Data do Cadastro</mat-label>
+          <input matInput formControlName="dateTime" [(ngModel)]="dateTimeFormated" readonly />
+        </mat-form-field> 
+        <br />
+        
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onSubmit()">
+        Salvar
+      </button>
+      <button mat-raised-button color="warn" (click)="onCancel()">
+        Cancelar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  
